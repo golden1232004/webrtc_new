@@ -26,3 +26,10 @@ started developing with the native code.
 
 ### webrtc_new
 construct webrct with cmake based on newest source code
+
+
+
+* third_party
+
+ * openssl(lib name is ssl) and cryto
+ 

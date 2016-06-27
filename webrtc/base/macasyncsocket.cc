@@ -14,7 +14,7 @@
 // notifications about this socket.  It uses CFSockets for signals, but prefers
 // the basic bsd socket operations rather than their CFSocket wrappers when
 // possible.
-
+#if defined(WEBRTC_MAC)
 #include <CoreFoundation/CoreFoundation.h>
 #include <fcntl.h>
 
@@ -483,3 +483,4 @@ void MacAsyncSocket::MacAsyncSocketCallBack(CFSocketRef s,
 }
 
 }  // namespace rtc
+#endif //WEBRTC_MAC

@@ -11,7 +11,7 @@
 // This file contains the implementation of TaskQueue for Mac and iOS.
 // The implementation uses Grand Central Dispatch queues (GCD) to
 // do the actual task queuing.
-
+#if defined(TASK_QUEUE_GCD)
 #include "webrtc/base/task_queue.h"
 
 #include <string.h>
@@ -165,3 +165,4 @@ void TaskQueue::PostTaskAndReply(std::unique_ptr<QueuedTask> task,
 }
 
 }  // namespace rtc
+#endif //TASK_QUEUE_GCD

@@ -23,6 +23,7 @@
 #include <openssl/bn.h>
 #include <openssl/rsa.h>
 #include <openssl/crypto.h>
+#include <openssl/evp.h>
 
 #include "webrtc/base/checks.h"
 #include "webrtc/base/helpers.h"

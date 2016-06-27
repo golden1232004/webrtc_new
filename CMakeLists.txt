@@ -45,6 +45,10 @@ option(FEATURE_ENABLE_SSL "" ON)
 if (FEATURE_ENABLE_SSL)
   add_definitions(-DFEATURE_ENABLE_SSL)
 endif()
+option(TASK_QUEUE_GCD "" OFF)
+if (TASK_QUEUE_GCD)
+  add_definitions(-DTASK_QUEUE_GCD)
+endif()
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)

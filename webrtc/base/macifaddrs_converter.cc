@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MAC)
 #include <memory>
 
 #include <net/if.h>
@@ -280,3 +280,4 @@ IfAddrsConverter* CreateIfAddrsConverter() {
 }
 
 }  // namespace rtc
+#endif //WEBRTC_MAC

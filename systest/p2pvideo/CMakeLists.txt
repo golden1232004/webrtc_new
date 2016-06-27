@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(p2pvideo)
 
-include_directories(./../)
+include_directories(${CMAKE_SOURCE_DIR})
 include_directories(./include)
 file(GLOB p2pvideo_src ./src/*.cc)
 
@@ -26,7 +26,7 @@ add_definitions(
 set(EXT_LIB pthread ssl crypto )
 set(3RDPARTY_LIB yuv)
 add_executable(p2pvideo_example webrtc_streamer.cc)
-target_link_libraries(p2pvideo_example p2pvideo  talk_app  talk_media talk_session json_app p2p base ${EXT_LIB} ${3RDPARTY_LIB})
+target_link_libraries(p2pvideo_example p2pvideo base ${EXT_LIB} ${3RDPARTY_LIB})
 
 
 

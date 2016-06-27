@@ -14,9 +14,8 @@
 #include <vector>
 
 #include "defaults.h"
-#include "talk/app/webrtc/videosourceinterface.h"
-#include "talk/app/webrtc/test/fakeconstraints.h"
-#include "talk/media/devices/devicemanager.h"
+#include "webrtc/media/base/videosourceinterface.h"
+#include "webrtc/api/test/fakeconstraints.h"
 #include "webrtc/base/common.h"
 #include "webrtc/base/json.h"
 #include "webrtc/base/logging.h"

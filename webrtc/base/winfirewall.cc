@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/winfirewall.h"
 
 #include "webrtc/base/win32.h"
@@ -153,3 +153,4 @@ bool WinFirewall::AddApplicationW(const wchar_t* filename,
 }
 
 }  // namespace rtc
+#endif //WEBRTC_WIN

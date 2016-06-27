@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_BASE_WIN32WINDOWPICKER_H_
 #define WEBRTC_BASE_WIN32WINDOWPICKER_H_
 
@@ -37,3 +38,4 @@ class Win32WindowPicker : public WindowPicker {
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_WIN32WINDOWPICKER_H_
+#endif //#if defined(WEBRTC_WIN)

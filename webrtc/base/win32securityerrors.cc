@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/win32.h"
 #include "webrtc/base/logging.h"
 
@@ -47,3 +47,4 @@ const ConstantLabel SECURITY_ERRORS[] = {
 ///////////////////////////////////////////////////////////////////////////////
 
 }  // namespace rtc
+#endif //WEBRTC_WIN

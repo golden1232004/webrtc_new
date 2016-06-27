@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/win32windowpicker.h"
 
 #include <string>
@@ -142,3 +143,4 @@ bool Win32WindowPicker::MoveToFront(const WindowId& id) {
 }
 
 }  // namespace rtc
+#endif //#if defined(WEBRTC_WIN)

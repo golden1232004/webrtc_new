@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_BASE_WIN32_H_
 #define WEBRTC_BASE_WIN32_H_
 
@@ -130,3 +130,4 @@ bool AdjustCurrentProcessPrivilege(const TCHAR* privilege, bool to_enable);
 
 #endif  // WEBRTC_WIN
 #endif  // WEBRTC_BASE_WIN32_H_
+#endif //WEBRTC_WIN

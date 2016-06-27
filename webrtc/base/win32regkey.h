@@ -16,7 +16,7 @@
 // Also provides a wrapper class for efficient
 // batch operations on values of a given registry key.
 //
-
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_BASE_WIN32REGKEY_H_
 #define WEBRTC_BASE_WIN32REGKEY_H_
 
@@ -337,3 +337,4 @@ class RegKey {
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_WIN32REGKEY_H_
+#endif //WEBRTC

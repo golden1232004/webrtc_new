@@ -7,10 +7,11 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/winping.h"
 
 #include <assert.h>
+
 #include <Iphlpapi.h>
 
 #include <algorithm>
@@ -356,3 +357,4 @@ WinPing::PingResult WinPing::Ping(IPAddress ip,
 //////////////////////////////////////////////////////////////////////
 
 } // namespace rtc
+#endif //WEBRTC_WIN

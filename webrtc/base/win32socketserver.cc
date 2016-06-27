@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/win32socketserver.h"
 
 #include <algorithm>
@@ -860,3 +860,4 @@ bool Win32SocketServer::MessageWindow::OnMessage(UINT wm, WPARAM wp,
 }
 
 }  // namespace rtc
+#endif //WEBRTC_WIN

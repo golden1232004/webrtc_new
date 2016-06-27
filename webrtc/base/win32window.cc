@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/common.h"
 #include "webrtc/base/logging.h"
 #include "webrtc/base/win32window.h"
@@ -119,3 +119,4 @@ LRESULT Win32Window::WndProc(HWND hwnd, UINT uMsg,
 }
 
 }  // namespace rtc
+#endif //WEBRTC_WIN

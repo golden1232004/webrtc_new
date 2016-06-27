@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #ifndef _WEBRTC_BASE_WIN32FILESYSTEM_H__
 #define _WEBRTC_BASE_WIN32FILESYSTEM_H__
 
@@ -99,3 +99,4 @@ class Win32Filesystem : public FilesystemInterface {
 }  // namespace rtc
 
 #endif  // WEBRTC_WINFILESYSTEM_H__
+#endif //WEBRTC_WIN

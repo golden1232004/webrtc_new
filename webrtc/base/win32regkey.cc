@@ -16,7 +16,7 @@
 //   function but with post-processing:
 //   * to fix REG_SZ or REG_EXPAND_SZ data that is not properly null-terminated;
 //   * to expand REG_EXPAND_SZ data.
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/win32regkey.h"
 
 #include <shlwapi.h>
@@ -1104,3 +1104,4 @@ bool AdjustCurrentProcessPrivilege(const TCHAR* privilege, bool to_enable) {
 }
 
 }  // namespace rtc
+#endif //WEBRTC_WIN

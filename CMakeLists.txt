@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 2.6)
+project(webrtc_engine)
+
+option(WEBRTC_POSIX "" ON)
+if (WEBRTC_POSIX)
+  add_definitions(-DWEBRTC_POSIX)
+endif ()
+option(WEBRTC_LINUX "" ON)
+if (WEBRTC_LINUX)
+  add_definitions(-DWEBRTC_LINUX)
+  add_definitions(-DLINUX)
+endif ()
+option(HAVE_WEBRTC_VIDEO "" ON)
+if (HAVE_WEBRTC_VIDEO)
+  add_definitions(-DHAVE_WEBRTC_VIDEO)
+endif()
+option(UNIT_TEST "" OFF)
+if (UNIT_TEST)
+  add_definitions(-DUNIT_TEST)
+endif ()
+option(SSL_USE_SCHANNEL " " OFF)
+if (SSL_USE_SCHANNEL)
+  add_definitions(-DSSL_USE_SCHANNEL)
+endif ()
+option(SSL_USE_OPENSSL " " ON)
+if (SSL_USE_OPENSSL)
+  add_definitions(-DSSL_USE_OPENSSL)
+  add_definitions(-DHAVE_OPENSSL_SSL_H)
+endif ()
+option(SSL_USE_NSS " " OFF)
+if (SSL_USE_NSS)
+  add_definitions(-DSSL_USE_NSS)
+endif ()
+
+option(WEBRTC_EXTERNAL_JSON "" ON)
+if (WEBRTC_EXTERNAL_JSON)
+  add_definitions(-DWEBRTC_EXTERNAL_JSON)
+endif()
+
+
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)
+
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+set(PATH_WEBRTC webrtc)
+
+add_subdirectory(${PATH_WEBRTC})
+
+#add_subdirectory(third_party)
+#add_subdirectory(systest)

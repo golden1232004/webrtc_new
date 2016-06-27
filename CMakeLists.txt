@@ -36,7 +36,10 @@ option(WEBRTC_EXTERNAL_JSON "" ON)
 if (WEBRTC_EXTERNAL_JSON)
   add_definitions(-DWEBRTC_EXTERNAL_JSON)
 endif()
-
+option(WEBRTC_BUILD_LIBEVENT "" ON)
+if (WEBRTC_BUILD_LIBEVENT)
+  add_definitions(-DWEBRTC_BUILD_LIBEVENT)
+endif ()
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)
@@ -48,5 +51,5 @@ set(PATH_WEBRTC webrtc)
 
 add_subdirectory(${PATH_WEBRTC})
 
-#add_subdirectory(third_party)
+add_subdirectory(third_party)
 #add_subdirectory(systest)

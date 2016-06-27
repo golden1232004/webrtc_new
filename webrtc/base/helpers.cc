@@ -12,18 +12,17 @@
 
 #include <limits>
 #include <memory>
-
 #if defined(FEATURE_ENABLE_SSL)
 #include "webrtc/base/sslconfig.h"
-#if defined(SSL_USE_OPENSSL)
-#include <openssl/rand.h>
-#else
-#if defined(WEBRTC_WIN)
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <ntsecapi.h>
-#endif  // WEBRTC_WIN
-#endif  // else
+#  if defined(SSL_USE_OPENSSL)
+#    include <openssl/rand.h>
+#  else
+#    if defined(WEBRTC_WIN)
+#      define WIN32_LEAN_AND_MEAN
+#      include <windows.h>
+#      include <ntsecapi.h>
+#    endif  // WEBRTC_WIN
+#  endif  // else
 #endif  // FEATURE_ENABLED_SSL
 
 #include "webrtc/base/base64.h"

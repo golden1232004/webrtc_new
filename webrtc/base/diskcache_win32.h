@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_BASE_DISKCACHEWIN32_H__
 #define WEBRTC_BASE_DISKCACHEWIN32_H__
 
@@ -27,3 +27,4 @@ class DiskCacheWin32 : public DiskCache {
 }
 
 #endif  // WEBRTC_BASE_DISKCACHEWIN32_H__
+#endif //WEBRTC_WIN

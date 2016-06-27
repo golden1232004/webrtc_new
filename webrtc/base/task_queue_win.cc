@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/base/task_queue.h"
 
 #include <string.h>
@@ -182,3 +182,4 @@ bool TaskQueue::ThreadMain(void* context) {
   return false;
 }
 }  // namespace rtc
+#endif //WEBRTC_WIN

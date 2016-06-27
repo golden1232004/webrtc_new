@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRCT_WIN)
 #include "webrtc/base/win32.h"
 #include <shellapi.h>
 #include <shlobj.h>
@@ -85,3 +85,4 @@ bool DiskCacheWin32::DeleteFile(const std::string& filename) const {
 }
 
 }
+#endif //WEBRTC_WIN

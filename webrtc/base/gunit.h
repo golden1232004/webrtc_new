@@ -16,7 +16,7 @@
 #include "webrtc/base/thread.h"
 #if defined(GTEST_RELATIVE_PATH)
 #include "testing/gtest/include/gtest/gtest.h"
-#else
+#elif defined(UNIT_TEST)
 #include "testing/base/public/gunit.h"
 #endif
 

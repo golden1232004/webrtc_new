@@ -9,7 +9,7 @@
  */
 
 // A libjingle compatible SocketServer for OSX/iOS/Cocoa.
-
+#if defined(WEBRTC_MAC)
 #ifndef WEBRTC_BASE_MACCOCOASOCKETSERVER_H_
 #define WEBRTC_BASE_MACCOCOASOCKETSERVER_H_
 
@@ -47,3 +47,4 @@ class MacCocoaSocketServer : public MacBaseSocketServer {
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_MACCOCOASOCKETSERVER_H_
+#endif //#if defined(WEBRTC_MAC)

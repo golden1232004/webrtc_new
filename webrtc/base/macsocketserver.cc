@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-
+#if defined(WEBRTC_MAC)
 #include "webrtc/base/macsocketserver.h"
 
 #include "webrtc/base/common.h"
@@ -384,3 +384,4 @@ void MacCarbonAppSocketServer::WakeUp() {
 
 #endif
 } // namespace rtc
+#endif //#if defined(WEBRTC_MAC)

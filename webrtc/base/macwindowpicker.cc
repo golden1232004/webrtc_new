@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(WEBRTC_MAC)
 #include "webrtc/base/macwindowpicker.h"
 
 #include <ApplicationServices/ApplicationServices.h>
@@ -254,3 +255,4 @@ bool MacWindowPicker::GetWindowList(WindowDescriptionList* descriptions) {
 }
 
 }  // namespace rtc
+#endif //#if defined(WEBRTC_MAC)

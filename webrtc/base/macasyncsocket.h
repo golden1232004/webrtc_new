@@ -12,7 +12,7 @@
 // asynchronously, which means that users of this socket should connect to
 // the various events declared in asyncsocket.h to receive notifications about
 // this socket.
-
+#if defined(WEBRTC_MAC)
 #ifndef WEBRTC_BASE_MACASYNCSOCKET_H__
 #define WEBRTC_BASE_MACASYNCSOCKET_H__
 
@@ -100,3 +100,4 @@ class MacAsyncSocket : public AsyncSocket, public sigslot::has_slots<> {
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_MACASYNCSOCKET_H__
+#endif// #if defined(WEBRTC_MAC)

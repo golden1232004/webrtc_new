@@ -12,7 +12,7 @@
 // included from C/C++ files that want to use some Cocoa functionality without
 // using the .mm extension (mostly for files that are compiled on multiple
 // platforms).
-
+#if defined(WEBRTC_MAC)
 #ifndef WEBRTC_BASE_MACCOCOATHREADHELPER_H__
 #define WEBRTC_BASE_MACCOCOATHREADHELPER_H__
 
@@ -25,3 +25,4 @@ void InitCocoaMultiThreading();
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_MACCOCOATHREADHELPER_H__
+#endif //#if defined(WEBRTC_MAC)

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MAC)
 #ifndef WEBRTC_BASE_MACUTILS_H__
 #define WEBRTC_BASE_MACUTILS_H__
 
@@ -57,3 +57,4 @@ bool RunAppleScript(const std::string& script);
 }  // namespace rtc
 
 #endif  // WEBRTC_BASE_MACUTILS_H__
+#endif //#if defined(WEBRTC_MAC)

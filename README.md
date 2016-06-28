@@ -35,3 +35,4 @@ construct webrct with cmake based on newest source code
  * gtk2.0
  * ATOM
  * libx11-dev
+ * X11 lib: XQuartz(for mac os x), libx11-dev(for linux)

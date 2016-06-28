@@ -17,6 +17,7 @@
 #include "webrtc/base/common.h"
 #include "webrtc/base/logging.h"
 
+#if defined (WEBRTC_WIN)
 ATOM MainWnd::wnd_class_ = 0;
 const wchar_t MainWnd::kClassName[] = L"WebRTC_MainWnd";
 
@@ -64,6 +65,10 @@ void AddListBoxItem(HWND listbox, const std::string& str, LPARAM item_data) {
 }
 
 }  // namespace
+#endif // WEBRTC_WIN
+
+
+#ifdef WIN32
 
 MainWnd::MainWnd(const char* server, int port, bool auto_connect,
                  bool auto_call)
@@ -618,3 +623,4 @@ void MainWnd::VideoRenderer::OnFrame(
   }
   InvalidateRect(wnd_, NULL, TRUE);
 }
+#endif //WIN32

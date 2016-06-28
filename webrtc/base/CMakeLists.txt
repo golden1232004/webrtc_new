@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(base)
 
-if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   include_directories(/usr/local/Cellar/openssl/1.0.2h_1/include)
 endif ()
 

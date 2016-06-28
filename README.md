@@ -32,4 +32,6 @@ construct webrct with cmake based on newest source code
 * third_party
 
  * openssl(lib name is ssl) and cryto
- 
+ * gtk2.0
+ * ATOM
+ * libx11-dev

@@ -70,5 +70,5 @@ set(PATH_WEBRTC webrtc)
 
 add_subdirectory(${PATH_WEBRTC})
 
-add_subdirectory(third_party)
-add_subdirectory(systest)
+#add_subdirectory(third_party)
+#add_subdirectory(systest)

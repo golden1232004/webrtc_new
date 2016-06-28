@@ -333,13 +333,14 @@ MacCarbonAppSocketServer::~MacCarbonAppSocketServer() {
 
 OSStatus MacCarbonAppSocketServer::WakeUpEventHandler(
     EventHandlerCallRef next, EventRef event, void *data) {
-  QuitApplicationEventLoop();
+
+//  QuitApplicationEventLoop();
   return noErr;
 }
 
 void MacCarbonAppSocketServer::TimerHandler(
     EventLoopTimerRef timer, void *data) {
-  QuitApplicationEventLoop();
+//  QuitApplicationEventLoop();
 }
 
 bool MacCarbonAppSocketServer::Wait(int cms, bool process_io) {
@@ -360,7 +361,7 @@ bool MacCarbonAppSocketServer::Wait(int cms, bool process_io) {
     // we disable each one's callbacks.
     EnableSocketCallbacks(false);
   }
-  RunApplicationEventLoop();
+//  RunApplicationEventLoop();
   if (!process_io) {
     // Reenable them.  Hopefully this won't cause spurious callbacks or
     // missing ones while they were disabled.

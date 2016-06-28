@@ -24,16 +24,16 @@ PlatformThreadId CurrentThreadId() {
 #if defined(WEBRTC_WIN)
   ret = GetCurrentThreadId();
 #elif defined(WEBRTC_POSIX)
-#if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
+#  if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
   ret = pthread_mach_thread_np(pthread_self());
-#elif defined(WEBRTC_LINUX)
+#  elif defined(WEBRTC_LINUX)
   ret =  syscall(__NR_gettid);
-#elif defined(WEBRTC_ANDROID)
+#  elif defined(WEBRTC_ANDROID)
   ret = gettid();
-#else
+#  else
   // Default implementation for nacl and solaris.
   ret = reinterpret_cast<pid_t>(pthread_self());
-#endif
+#  endif
 #endif  // defined(WEBRTC_POSIX)
   RTC_DCHECK(ret);
   return ret;

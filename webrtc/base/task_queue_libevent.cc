@@ -216,7 +216,13 @@ void TaskQueue::PostDelayedTask(std::unique_ptr<QueuedTask> task,
     QueueContext* ctx =
         static_cast<QueueContext*>(pthread_getspecific(GetQueuePtrTls()));
     ctx->pending_timers_.push_back(timer);
+#if defined(WEBRTC_MAC)
+    timeval tv;
+    tv.tv_sec = milliseconds / 1000;
+    tv.tv_usec = (milliseconds % 1000) * 1000;
+#else
     timeval tv = {milliseconds / 1000, (milliseconds % 1000) * 1000};
+#endif
     event_add(&timer->ev, &tv);
   } else {
     PostTask(std::unique_ptr<QueuedTask>(

@@ -8,13 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include "webrtc/examples/peerconnection/client/linux/main_wnd.h"
+#include "main_wnd.h"
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <stddef.h>
 
-#include "webrtc/examples/peerconnection/client/defaults.h"
+#include "defaults.h"
 #include "webrtc/base/common.h"
 #include "webrtc/base/logging.h"
 #include "webrtc/base/stringutils.h"

@@ -7,14 +7,14 @@ endif ()
 
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(./include)
-file(GLOB src_file ./conductor.cc ./defaults.cc ./peer_connection_client.cc)
+file(GLOB src_file ./src/*.cc)
 
 add_library(peerconnection_client STATIC ${src_file})
 
 set(EXT_LIB pthread ssl crypto dl ss3 rt)
 set(3RDPARTY_LIB yuv)
-add_executable(peerconnection_client main.cc)
-target_link_libraries(peerconnection_client peerconnection_clent base ${EXT_LIB} ${3RDPARTY_LIB})
+add_executable(peerconnection_client_example test/webrtc_streamer.cc)
+target_link_libraries(peerconnection_client_example peerconnection_clent base ${EXT_LIB} ${3RDPARTY_LIB})
 
 
 

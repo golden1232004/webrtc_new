@@ -14,8 +14,8 @@
 #include <memory>
 #include <string>
 
-#include "webrtc/examples/peerconnection/client/main_wnd.h"
-#include "webrtc/examples/peerconnection/client/peer_connection_client.h"
+#include "wnd.h"
+#include "peer_connection_client.h"
 
 // Forward declarations.
 typedef struct _GtkWidget GtkWidget;

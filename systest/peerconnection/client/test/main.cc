@@ -10,10 +10,10 @@
 
 #include <gtk/gtk.h>
 
-#include "webrtc/examples/peerconnection/client/conductor.h"
-#include "webrtc/examples/peerconnection/client/flagdefs.h"
-#include "webrtc/examples/peerconnection/client/linux/main_wnd.h"
-#include "webrtc/examples/peerconnection/client/peer_connection_client.h"
+#include "conductor.h"
+#include "flagdefs.h"
+#include "main_wnd.h"
+#include "peer_connection_client.h"
 
 #include "webrtc/base/ssladapter.h"
 #include "webrtc/base/thread.h"

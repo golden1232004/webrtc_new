@@ -18,7 +18,7 @@
 #include "webrtc/base/common.h"
 #include "webrtc/base/json.h"
 #include "webrtc/base/logging.h"
-#include "webrtc/examples/peerconnection/client/defaults.h"
+#include "defaults.h"
 #include "webrtc/media/engine/webrtcvideocapturerfactory.h"
 #include "webrtc/modules/video_capture/video_capture_factory.h"
 

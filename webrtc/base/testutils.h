@@ -422,7 +422,7 @@ class SocketTestServer : public sigslot::has_slots<> {
 ///////////////////////////////////////////////////////////////////////////////
 // Unittest predicates which are similar to STREQ, but for raw memory
 ///////////////////////////////////////////////////////////////////////////////
-
+#if defined(UNIT_TEST)
 inline AssertionResult CmpHelperMemEq(const char* expected_expression,
                                       const char* expected_length_expression,
                                       const char* actual_expression,
@@ -460,6 +460,8 @@ inline AssertionResult CmpHelperMemEq(const char* expected_expression,
 
   return AssertionFailure(msg);
 }
+#endif // UNIT_TEST
+
 
 #define EXPECT_MEMEQ(expected, expected_length, actual, actual_length) \
   EXPECT_PRED_FORMAT4(::testing::CmpHelperMemEq, expected, expected_length, \

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include <math.h>
 #include <string.h>
 
@@ -255,3 +255,4 @@ TEST_F(TestLibYuv, RotateTest) {
 }
 
 }  // namespace webrtc
+#endif //UNIT_TEST

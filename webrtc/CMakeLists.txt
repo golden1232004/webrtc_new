@@ -7,7 +7,7 @@ add_subdirectory(base)
 add_subdirectory(p2p)
 add_subdirectory(media)
 add_subdirectory(pc)
-#add_subdirectory(common_video)
+add_subdirectory(common_video)
 
 #add_subdirectory(./sound)
 #add_subdirectory(./system_wrappers)

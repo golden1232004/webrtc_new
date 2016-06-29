@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 
 #include "webrtc/common_video/include/bitrate_adjuster.h"
@@ -167,3 +167,4 @@ TEST_F(BitrateAdjusterTest, SmallTargetDeltaOverflow) {
 }
 
 }  // namespace webrtc
+#endif //UNIT_TEST

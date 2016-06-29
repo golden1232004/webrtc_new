@@ -185,9 +185,11 @@ class SrtpSession {
   // Configures the session for sending data using the specified
   // cipher-suite and key. Receiving must be done by a separate session.
   bool SetSend(int cs, const uint8_t* key, int len);
+  bool SetSend(const std::string& cs, const uint8_t* key, int len);
   // Configures the session for receiving data using the specified
   // cipher-suite and key. Sending must be done by a separate session.
   bool SetRecv(int cs, const uint8_t* key, int len);
+  bool SetRecv(const std::string& cs, const uint8_t* key, int len);
 
   // Encrypts/signs an individual RTP/RTCP packet, in-place.
   // If an HMAC is used, this will increase the packet size.
@@ -209,6 +211,7 @@ class SrtpSession {
 
   // Update the silent threshold (in ms) for signaling errors.
   void set_signal_silent_time(int signal_silent_time_in_ms);
+  void set_signal_silent_time(uint32_t signal_silent_time);
 
   // Calls srtp_shutdown if it's initialized.
   static void Terminate();

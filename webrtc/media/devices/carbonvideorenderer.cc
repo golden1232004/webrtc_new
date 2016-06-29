@@ -9,7 +9,7 @@
  */
 
 // Implementation of CarbonVideoRenderer
-
+#if defined(WEBRTC_MAC)
 #include "webrtc/media/devices/carbonvideorenderer.h"
 
 #include "webrtc/base/logging.h"
@@ -28,7 +28,7 @@ CarbonVideoRenderer::CarbonVideoRenderer(int x, int y)
 
 CarbonVideoRenderer::~CarbonVideoRenderer() {
   if (window_ref_) {
-    DisposeWindow(window_ref_);
+    // DisposeWindow(window_ref_);//TODO: by golden
   }
 }
 
@@ -168,3 +168,4 @@ bool CarbonVideoRenderer::Initialize() {
 }
 
 }  // namespace cricket
+#endif //WEBRTC_MAC

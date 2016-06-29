@@ -13,13 +13,14 @@
 
 #ifndef WEBRTC_MEDIA_DEVICES_CARBONVIDEORENDERER_H_
 #define WEBRTC_MEDIA_DEVICES_CARBONVIDEORENDERER_H_
-
+#if defined(WEBRTC_MAC)
 #include <memory>
 
-#include <Carbon/Carbon.h>
+#include <Carbon.h>
 
 #include "webrtc/base/criticalsection.h"
 #include "webrtc/media/base/videosinkinterface.h"
+#include "webrtc/media/base/videoframe.h"
 
 namespace cricket {
 
@@ -52,5 +53,5 @@ class CarbonVideoRenderer
 };
 
 }  // namespace cricket
-
+#endif // WEBRTC_MAC
 #endif  // WEBRTC_MEDIA_DEVICES_CARBONVIDEORENDERER_H_

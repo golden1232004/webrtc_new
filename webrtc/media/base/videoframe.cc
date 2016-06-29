@@ -15,6 +15,7 @@
 #include "libyuv/compare.h"
 #include "libyuv/planar_functions.h"
 #include "libyuv/scale.h"
+#include "libyuv/convert_from.h"
 #include "webrtc/base/arraysize.h"
 #include "webrtc/base/checks.h"
 #include "webrtc/base/logging.h"

@@ -3,6 +3,7 @@ project(base)
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   include_directories(/usr/local/Cellar/openssl/1.0.2h_1/include)
+  include_directories(/opt//X11/include/)
 endif ()
 
 include_directories(${CMAKE_SOURCE_DIR})

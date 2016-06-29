@@ -29,10 +29,10 @@ file(GLOB src_file ./src/*.cc)
 add_library(peerconnection_client STATIC ${src_file})
 
 set(EXT_LIB pthread  dl rt  gtk-x11-2.0 glib-2.0 atk-1.0 pango-1.0 cairo gdk-x11-2.0 gobject-2.0) #auxiliary lib 
-set(3RDPARTY_LIB ssl crypto jsoncpp)
+set(3RDPARTY_LIB ssl crypto jsoncpp yuv)
 link_directories(${CMAKE_SOURCE_DIR}/build/bin) # otherwise, can not find libjsoncpp.a, I do not know the reason.
 add_executable(peerconnection_client_example test/main.cc)
-target_link_libraries(peerconnection_client_example peerconnection_client api base ${EXT_LIB} ${3RDPARTY_LIB})
+target_link_libraries(peerconnection_client_example peerconnection_client api base media pc p2p common_video ${EXT_LIB} ${3RDPARTY_LIB})
 
 
 

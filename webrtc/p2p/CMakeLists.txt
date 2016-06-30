@@ -5,6 +5,7 @@ project(p2p)
 #include_directories(./client)
 #include_directories(./stunprober)
 include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${CMAKE_SOURCE_DIR}/chromium/src)
 
 #file(GLOB lib_src ./base/*.cc ./client/*.cc ./quic/*.cc ./stunprober/*.cc)
 file(GLOB lib_src ./base/*.cc ./client/*.cc  ./stunprober/*.cc)

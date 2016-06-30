@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_API_QUIC_DATA_TRANSPORT)
 #include "webrtc/api/quicdatatransport.h"
 
 #include "webrtc/base/logging.h"
@@ -28,19 +28,19 @@ QuicDataTransport::~QuicDataTransport() {}
 bool QuicDataTransport::SetTransportChannel(
     cricket::QuicTransportChannel* channel) {
   if (!channel) {
-    LOG(LS_ERROR) << "|channel| is NULL. Cannot set transport channel.";
+    logging::LOG(LS_ERROR) << "|channel| is NULL. Cannot set transport channel.";
     return false;
   }
   if (quic_transport_channel_) {
     if (channel == quic_transport_channel_) {
-      LOG(LS_WARNING) << "Ignoring duplicate transport channel.";
+      logging::LOG(LS_WARNING) << "Ignoring duplicate transport channel.";
       return true;
     }
-    LOG(LS_ERROR) << "|channel| does not match existing transport channel.";
+    logging::LOG(LS_ERROR) << "|channel| does not match existing transport channel.";
     return false;
   }
 
-  LOG(LS_INFO) << "Setting QuicTransportChannel for QuicDataTransport";
+  logging::LOG(LS_INFO) << "Setting QuicTransportChannel for QuicDataTransport";
   quic_transport_channel_ = channel;
   quic_transport_channel_->SignalIncomingStream.connect(
       this, &QuicDataTransport::OnIncomingStream);
@@ -49,7 +49,7 @@ bool QuicDataTransport::SetTransportChannel(
   for (const auto& kv : data_channel_by_id_) {
     rtc::scoped_refptr<QuicDataChannel> data_channel = kv.second;
     if (!data_channel->SetTransportChannel(quic_transport_channel_)) {
-      LOG(LS_ERROR)
+      logging::LOG(LS_ERROR)
           << "Cannot set QUIC transport channel for QUIC data channel "
           << kv.first;
       success = false;
@@ -65,14 +65,14 @@ rtc::scoped_refptr<DataChannelInterface> QuicDataTransport::CreateDataChannel(
     return nullptr;
   }
   if (data_channel_by_id_.find(config->id) != data_channel_by_id_.end()) {
-    LOG(LS_ERROR) << "QUIC data channel already exists with id " << config->id;
+    logging::LOG(LS_ERROR) << "QUIC data channel already exists with id " << config->id;
     return nullptr;
   }
   rtc::scoped_refptr<QuicDataChannel> data_channel(
       new QuicDataChannel(signaling_thread_, worker_thread_, label, *config));
   if (quic_transport_channel_) {
     if (!data_channel->SetTransportChannel(quic_transport_channel_)) {
-      LOG(LS_ERROR)
+      logging::LOG(LS_ERROR)
           << "Cannot set QUIC transport channel for QUIC data channel "
           << config->id;
     }
@@ -119,7 +119,7 @@ void QuicDataTransport::OnDataReceived(net::QuicStreamId id,
   size_t bytes_read;
   if (!ParseQuicDataMessageHeader(data, len, &data_channel_id, &message_id,
                                   &bytes_read)) {
-    LOG(LS_ERROR) << "Could not read QUIC message header from QUIC stream "
+    logging::LOG(LS_ERROR) << "Could not read QUIC message header from QUIC stream "
                   << id;
     return;
   }
@@ -130,7 +130,7 @@ void QuicDataTransport::OnDataReceived(net::QuicStreamId id,
   if (data_channel_kv == data_channel_by_id_.end()) {
     // TODO(mikescarlett): Implement OPEN message to create a new
     // QuicDataChannel when messages are received for a nonexistent ID.
-    LOG(LS_ERROR) << "Data was received for QUIC data channel "
+    logging::LOG(LS_ERROR) << "Data was received for QUIC data channel "
                   << data_channel_id
                   << " but it is not registered to the QuicDataTransport.";
     return;
@@ -144,3 +144,4 @@ void QuicDataTransport::OnDataReceived(net::QuicStreamId id,
 }
 
 }  // namespace webrtc
+#endif //ENABLE_API_QUIC_DATA_TRANSPORT

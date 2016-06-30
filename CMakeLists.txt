@@ -5,6 +5,7 @@ option(WEBRTC_POSIX "" ON)
 option(WEBRTC_LINUX "" ON)
 option(WEBRTC_WIN "" OFF)
 option(WEBRTC_MAC "" OFF)
+option(WEBRTC_ANDROID "" OFF)
 
 if (WEBRTC_POSIX)
   add_definitions(-DWEBRTC_POSIX)
@@ -59,7 +60,11 @@ option(TASK_QUEUE_GCD "" OFF)
 if (TASK_QUEUE_GCD)
   add_definitions(-DTASK_QUEUE_GCD)
 endif()
+############################## tmp macro control ##########################
+option(ENABLE_API_QUIC_DATA_TRANSPORT "" OFF)
+option(ENABLE_API_QUIC_DATA_CHANNEL "" OFF)
 
+###########################################################################
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)
 

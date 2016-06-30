@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_ANDROID)
 #include "webrtc/api/androidvideocapturer.h"
 
 #include <memory>
@@ -97,3 +97,4 @@ bool AndroidVideoCapturer::GetBestCaptureFormat(
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_ANDROID

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+if defined (ENABLE_API_QUIC_DATA_TRANSPORT)
 #ifndef WEBRTC_API_QUICDATATRANSPORT_H_
 #define WEBRTC_API_QUICDATATRANSPORT_H_
 
@@ -88,3 +88,4 @@ class QuicDataTransport : public sigslot::has_slots<> {
 }  // namespace webrtc
 
 #endif  // WEBRTC_API_QUICDATATRANSPORT_H_
+#endif //ENABLE_API_QUIC_DATA_TRANSPORT

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_API_QUIC_DATA_CHANNEL)
 #include "webrtc/api/quicdatachannel.h"
 
 #include "webrtc/base/bind.h"
@@ -392,3 +392,4 @@ size_t QuicDataChannel::GetNumIncomingStreams() const {
 }
 
 }  // namespace webrtc
+#endif // ENABLE_API_QUIC_DATA_CHANNEL

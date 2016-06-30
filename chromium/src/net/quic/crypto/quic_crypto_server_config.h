@@ -26,8 +26,8 @@
 #include "net/quic/crypto/crypto_secret_boxer.h"
 #include "net/quic/crypto/proof_source.h"
 #include "net/quic/crypto/quic_compressed_certs_cache.h"
-#include "net/quic/proto/cached_network_parameters.pb.h"
-#include "net/quic/proto/source_address_token.pb.h"
+//#include "net/quic/proto/cached_network_parameters.pb.h"
+//#include "net/quic/proto/source_address_token.pb.h"
 #include "net/quic/quic_time.h"
 
 namespace net {

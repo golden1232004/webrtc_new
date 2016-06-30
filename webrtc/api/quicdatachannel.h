@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+if defined(ENABLE_API_QUIC_DATA_CHANNEL)
 #ifndef WEBRTC_API_QUICDATACHANNEL_H_
 #define WEBRTC_API_QUICDATACHANNEL_H_
 
@@ -213,3 +213,4 @@ class QuicDataChannel : public rtc::RefCountedObject<DataChannelInterface>,
 }  // namespace webrtc
 
 #endif  // WEBRTC_API_QUICDATACHANNEL_H_
+#endif //ENABLE_API_QUIC_DATA_CHANNEL

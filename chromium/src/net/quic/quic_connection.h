@@ -273,6 +273,12 @@ class NET_EXPORT_PRIVATE QuicConnectionHelperInterface {
 
   // Returns a QuicRandom to be used for all random number related functions.
   virtual QuicRandom* GetRandomGenerator() = 0;
+  //
+  virtual QuicAlarm* CreateAlarm(net::QuicAlarm::Delegate* delegate) = 0;
+  //
+  virtual net::QuicArenaScopedPtr<net::QuicAlarm> CreateAlarm(
+                          net::QuicArenaScopedPtr<QuicAlarm::Delegate> delegate,
+                          net::QuicConnectionArena* arena) = 0;
 
   // Returns a QuicBufferAllocator to be used for all stream frame buffers.
   virtual QuicBufferAllocator* GetBufferAllocator() = 0;

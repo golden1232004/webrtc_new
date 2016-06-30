@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined (WEBRTC_ANDROID)
 #ifndef WEBRTC_API_ANDROIDVIDEOCAPTURER_H_
 #define WEBRTC_API_ANDROIDVIDEOCAPTURER_H_
 
@@ -84,3 +84,4 @@ class AndroidVideoCapturer : public cricket::VideoCapturer {
 }  // namespace webrtc
 
 #endif  // WEBRTC_API_ANDROIDVIDEOCAPTURER_H_
+#endif //WEBRTC_ANDROID

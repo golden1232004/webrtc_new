@@ -6,7 +6,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 endif ()
 
 include_directories(${CMAKE_SOURCE_DIR})
-
+include_directories(${CMAKE_SOURCE_DIR}/chromium/src)
 
 file(GLOB lib_src *.cc)
 

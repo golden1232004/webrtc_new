@@ -14,7 +14,7 @@
 #include "net/quic/crypto/quic_random.h"
 #include "net/quic/quic_alarm.h"
 #include "net/quic/quic_clock.h"
-#include "net/quic/quic_connection.h"
+#include "net/quic/quic_connection.h"   // QuicConnectionHelperInterface
 #include "net/quic/quic_simple_buffer_allocator.h"
 #include "webrtc/base/thread.h"
 
@@ -54,11 +54,15 @@ class QuicConnectionHelper : public net::QuicConnectionHelperInterface {
 
   // QuicConnectionHelperInterface overrides.
   const net::QuicClock* GetClock() const override;
+
   net::QuicRandom* GetRandomGenerator() override;
+
   QuicAlarm* CreateAlarm(net::QuicAlarm::Delegate* delegate) override;
+
   net::QuicArenaScopedPtr<net::QuicAlarm> CreateAlarm(
-      net::QuicArenaScopedPtr<QuicAlarm::Delegate> delegate,
-      net::QuicConnectionArena* arena) override;
+                             net::QuicArenaScopedPtr<QuicAlarm::Delegate> delegate,
+                             net::QuicConnectionArena* arena) override;
+
   net::QuicBufferAllocator* GetBufferAllocator() override;
 
  private:

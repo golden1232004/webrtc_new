@@ -10,8 +10,8 @@
 
 #ifndef WEBRTC_COMMON_VIDEO_INCLUDE_COREVIDEO_FRAME_BUFFER_H_
 #define WEBRTC_COMMON_VIDEO_INCLUDE_COREVIDEO_FRAME_BUFFER_H_
-
-#include <CoreVideo/CoreVideo.h>
+#if defined (WEBRTC_MAC)
+#include <CoreVideo/CoreVideo.h> // defined in mac os x
 
 #include "webrtc/common_video/include/video_frame_buffer.h"
 
@@ -29,6 +29,6 @@ class CoreVideoFrameBuffer : public NativeHandleBuffer {
 };
 
 }  // namespace webrtc
-
+#endif // WEBRTC_MAC
 #endif  // WEBRTC_COMMON_VIDEO_INCLUDE_COREVIDEO_FRAME_BUFFER_H_
 

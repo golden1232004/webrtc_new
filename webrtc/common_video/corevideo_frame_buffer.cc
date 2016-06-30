@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined (WEBRTC_MAC)
 #include "webrtc/common_video/include/corevideo_frame_buffer.h"
 
 #include "libyuv/convert.h"
@@ -59,3 +59,4 @@ CoreVideoFrameBuffer::NativeToI420Buffer() {
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_MAC

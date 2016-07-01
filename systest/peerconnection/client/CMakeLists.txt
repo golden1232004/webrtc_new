@@ -32,7 +32,8 @@ set(EXT_LIB pthread  dl rt  gtk-x11-2.0 glib-2.0 atk-1.0 pango-1.0 cairo gdk-x11
 set(3RDPARTY_LIB ssl crypto jsoncpp yuv)
 link_directories(${CMAKE_SOURCE_DIR}/build/bin) # otherwise, can not find libjsoncpp.a, I do not know the reason.
 add_executable(peerconnection_client_example test/main.cc)
-target_link_libraries(peerconnection_client_example peerconnection_client api media pc p2p common_video  module_video_capture base ${EXT_LIB} ${3RDPARTY_LIB})
+target_link_libraries(peerconnection_client_example peerconnection_client api media pc p2p common_video  module_video_capture module_audio_coding base ${EXT_LIB} ${3RDPARTY_LIB})
+
 
 
 

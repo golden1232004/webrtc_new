@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined (WEBRCT_ANDROID)
 #ifndef WEBRTC_SYSTEM_WRAPPERS_INCLUDE_LOGCAT_TRACE_CONTEXT_H_
 #define WEBRTC_SYSTEM_WRAPPERS_INCLUDE_LOGCAT_TRACE_CONTEXT_H_
 
@@ -33,3 +33,4 @@ class LogcatTraceContext : public webrtc::TraceCallback {
 }  // namespace webrtc
 
 #endif  // WEBRTC_SYSTEM_WRAPPERS_INCLUDE_LOGCAT_TRACE_CONTEXT_H_
+#endif //#if defined (WEBRCT_ANDROID)

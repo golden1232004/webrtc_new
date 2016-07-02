@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/system_wrappers/include/atomic32.h"
 
 #include <assert.h>
@@ -58,3 +58,4 @@ bool Atomic32::CompareExchange(int32_t new_value, int32_t compare_value) {
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_WIN

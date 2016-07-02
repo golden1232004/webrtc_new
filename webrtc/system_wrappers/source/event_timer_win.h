@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_SYSTEM_WRAPPERS_SOURCE_EVENT_WIN_H_
 #define WEBRTC_SYSTEM_WRAPPERS_SOURCE_EVENT_WIN_H_
 
@@ -38,3 +38,4 @@ class EventTimerWin : public EventTimerWrapper {
 }  // namespace webrtc
 
 #endif  // WEBRTC_SYSTEM_WRAPPERS_SOURCE_EVENT_WIN_H_
+#endif //WEBRTC_WIN

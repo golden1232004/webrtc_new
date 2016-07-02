@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "webrtc/system_wrappers/include/data_log.h"
 
 #include <stdio.h>
@@ -53,3 +53,4 @@ TEST(TestDataLogDisabled, EnsureNoFileIsWritten) {
   // Verify no data log file have been written:
   ASSERT_EQ(NULL, fopen(kDataLogFileName, "r"));
 }
+#endif //UNIT_TEST

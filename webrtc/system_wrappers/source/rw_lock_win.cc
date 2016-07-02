@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/system_wrappers/source/rw_lock_win.h"
 
 #include "webrtc/system_wrappers/include/trace.h"
@@ -95,3 +95,4 @@ bool RWLockWin::LoadModule() {
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_WIN

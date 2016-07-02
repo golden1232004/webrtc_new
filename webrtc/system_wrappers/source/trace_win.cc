@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/system_wrappers/source/trace_win.h"
 
 #include <assert.h>
@@ -95,3 +95,4 @@ int32_t TraceWindows::AddDateTimeInfo(char* trace_message) const {
 }
 
 }  // namespace webrtc
+#endif //#if defined(WEBRTC_WIN)

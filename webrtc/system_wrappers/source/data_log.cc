@@ -225,16 +225,20 @@ void LogTable::Flush() {
     for (column_it = columns_.begin();
          column_it != columns_.end(); ++column_it) {
       if (column_it->second > 1) {
+        /*
         file_->WriteText("%s[%u],", column_it->first.c_str(),
                          column_it->second);
-        for (int i = 1; i < column_it->second; ++i)
-          file_->WriteText(",");
+        */
+        for (int i = 1; i < column_it->second; ++i){
+          //file_->WriteText(",");
+        }
       } else {
-        file_->WriteText("%s,", column_it->first.c_str());
+        //file_->WriteText("%s,", column_it->first.c_str());
       }
     }
-    if (columns_.size() > 0)
-      file_->WriteText("\n");
+    if (columns_.size() > 0){
+      //file_->WriteText("\n");
+    }
   }
 
   // Swap the list used for flushing with the list containing the row history
@@ -257,10 +261,10 @@ void LogTable::Flush() {
          column_it != columns_.end(); ++column_it) {
       std::string row_string;
       (*row_it)->ToString(column_it->first, &row_string);
-      file_->WriteText("%s", row_string.c_str());
+      //file_->WriteText("%s", row_string.c_str());
     }
     if (columns_.size() > 0)
-      file_->WriteText("\n");
+      //file_->WriteText("\n");
     delete *row_it;
     row_it = rows_flush_->erase(row_it);
   }

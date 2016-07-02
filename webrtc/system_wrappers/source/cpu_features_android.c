@@ -7,9 +7,10 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_ANDROID)
 #include <cpu-features.h>
 
 uint64_t WebRtc_GetCPUFeaturesARM(void) {
   return android_getCpuFeatures();
 }
+#endif //WEBRTC_ANDROID

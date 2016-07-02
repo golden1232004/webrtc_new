@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/system_wrappers/source/event_timer_win.h"
 
 #include "Mmsystem.h"
@@ -76,3 +76,4 @@ bool EventTimerWin::StopTimer() {
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_WIN

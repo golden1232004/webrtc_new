@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_WIN)
 #ifndef WEBRTC_SYSTEM_WRAPPERS_SOURCE_TRACE_WIN_H_
 #define WEBRTC_SYSTEM_WRAPPERS_SOURCE_TRACE_WIN_H_
 
@@ -34,3 +34,4 @@ class TraceWindows : public TraceImpl {
 }  // namespace webrtc
 
 #endif  // WEBRTC_SYSTEM_WRAPPERS_SOURCE_TRACE_WIN_H_
+#endif //#if defined(WEBRTC_WIN)

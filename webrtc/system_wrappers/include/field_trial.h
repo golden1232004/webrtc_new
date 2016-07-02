@@ -61,7 +61,6 @@ namespace field_trial {
 //
 // Note: To keep things tidy append all the trial names with WebRTC.
 std::string FindFullName(const std::string& name);
-
 }  // namespace field_trial
 }  // namespace webrtc
 

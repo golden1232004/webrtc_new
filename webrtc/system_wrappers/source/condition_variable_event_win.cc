@@ -82,7 +82,7 @@ Vanderbilt University to appear in their names.
  *     a thread from spinning on the same condition variable, preventing other
  *     threads from waking up.
  */
-
+#if defined(WEBRTC_WIN)
 #include "webrtc/system_wrappers/source/condition_variable_event_win.h"
 
 #include "webrtc/system_wrappers/include/critical_section_wrapper.h"
@@ -192,3 +192,4 @@ void ConditionVariableEventWin::WakeAll() {
 }
 
 }  // namespace webrtc
+#endif //WEBRTC_WIN

@@ -40,6 +40,7 @@ construct webrct with cmake based on newest source code
 * third_party
 
  * openssl(lib name is ssl) and cryto
+ * opus: it is constructed by make. so compile indiviually
 
 
 * auxiliary lib
@@ -51,3 +52,4 @@ construct webrct with cmake based on newest source code
 * Note: type
 
  * ATOM (windows type)
+ * cmake missing:JPEG_LIBRARY JPEG_INCLUDE_DIR; install libjpeg-dev

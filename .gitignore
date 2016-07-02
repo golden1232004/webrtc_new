@@ -118,7 +118,7 @@
 /third_party/ocmock
 /third_party/openh264
 /third_party/openmax_dl
-/third_party/opus
+#/third_party/opus
 /third_party/proguard
 /third_party/protobuf
 /third_party/requests

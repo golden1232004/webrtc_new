@@ -4,3 +4,6 @@
 [submodule "third_party/libyuv"]
 	path = third_party/libyuv
 	url = git@github.com:golden1232004/libyuv.git
+[submodule "third_party/opus"]
+	path = third_party/opus
+	url = git@github.com:golden1232004/opus.git

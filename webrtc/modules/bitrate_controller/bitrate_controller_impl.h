@@ -53,8 +53,9 @@ class BitrateControllerImpl : public BitrateController {
   void UpdateDelayBasedEstimate(uint32_t bitrate_bps) override;
 
   void SetReservedBitrate(uint32_t reserved_bitrate_bps) override;
-
+#if defined(WEBRTC_LOG)
   void SetEventLog(RtcEventLog* event_log) override;
+#endif
 
   // Returns true if the parameters have changed since the last call.
   bool GetNetworkParameters(uint32_t* bitrate,

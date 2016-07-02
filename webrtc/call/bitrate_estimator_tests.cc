@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(UNIT_TEST)
 #include <functional>
 #include <list>
 #include <memory>
@@ -331,4 +332,6 @@ TEST_F(BitrateEstimatorTest, DISABLED_SwitchesToASTThenBackToTOFForVideo) {
   streams_[1]->StopSending();
   EXPECT_TRUE(receiver_log_.Wait());
 }
+
 }  // namespace webrtc
+#endif //UNIT_TEST

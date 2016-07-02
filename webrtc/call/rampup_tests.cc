@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "webrtc/call/rampup_tests.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -582,3 +582,4 @@ TEST_F(RampUpTest, TransportSequenceNumberSingleStreamWithHighStartBitrate) {
   RunBaseTest(&test);
 }
 }  // namespace webrtc
+#endif //#if defined(UNIT_TEST)

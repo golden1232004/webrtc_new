@@ -63,7 +63,7 @@ endif()
 ############################## tmp macro control ##########################
 option(ENABLE_API_QUIC_DATA_TRANSPORT "" OFF)
 option(ENABLE_API_QUIC_DATA_CHANNEL "" OFF)
-
+option(WEBRTC_LOG "" OFF)
 ###########################################################################
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)

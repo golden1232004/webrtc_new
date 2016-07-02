@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #ifndef WEBRTC_CALL_RAMPUP_TESTS_H_
 #define WEBRTC_CALL_RAMPUP_TESTS_H_
 
@@ -134,3 +134,4 @@ class RampUpDownUpTester : public RampUpTester {
 };
 }  // namespace webrtc
 #endif  // WEBRTC_CALL_RAMPUP_TESTS_H_
+#endif //#if defined(UNIT_TEST)

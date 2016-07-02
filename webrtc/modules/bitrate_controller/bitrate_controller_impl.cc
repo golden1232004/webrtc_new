@@ -157,11 +157,12 @@ void BitrateControllerImpl::SetReservedBitrate(uint32_t reserved_bitrate_bps) {
   }
   MaybeTriggerOnNetworkChanged();
 }
-
+#if defined(WEBRTC_LOG)
 void BitrateControllerImpl::SetEventLog(RtcEventLog* event_log) {
   rtc::CritScope cs(&critsect_);
   bandwidth_estimation_.SetEventLog(event_log);
 }
+#endif
 
 void BitrateControllerImpl::OnReceivedEstimatedBitrate(uint32_t bitrate) {
   {

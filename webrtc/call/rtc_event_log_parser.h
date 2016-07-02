@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(WEBRTC_LOG)
 #ifndef WEBRTC_CALL_RTC_EVENT_LOG_PARSER_H_
 #define WEBRTC_CALL_RTC_EVENT_LOG_PARSER_H_
 
@@ -112,3 +113,4 @@ class ParsedRtcEventLog {
 }  // namespace webrtc
 
 #endif  // WEBRTC_CALL_RTC_EVENT_LOG_PARSER_H_
+#endif //#if defined(WEBRTC_LOG)

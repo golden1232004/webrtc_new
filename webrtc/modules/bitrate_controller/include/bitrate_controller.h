@@ -24,7 +24,9 @@
 namespace webrtc {
 
 class CriticalSectionWrapper;
+#if defined(WEBRTC_LOG)
 class RtcEventLog;
+#endif
 struct PacketInfo;
 
 // Deprecated
@@ -75,8 +77,9 @@ class BitrateController : public Module {
                              int max_bitrate_bps) = 0;
 
   virtual void UpdateDelayBasedEstimate(uint32_t bitrate_bps) = 0;
-
+#if defined(WEBRTC_LOG)
   virtual void SetEventLog(RtcEventLog* event_log) = 0;
+#endif
 
   // Gets the available payload bandwidth in bits per second. Note that
   // this bandwidth excludes packet headers.

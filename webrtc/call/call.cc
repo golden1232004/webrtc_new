@@ -243,7 +243,9 @@ Call::Call(const Call::Config& config)
       config_.bitrate_config.min_bitrate_bps,
       config_.bitrate_config.start_bitrate_bps,
       config_.bitrate_config.max_bitrate_bps);
+#if defined(WEBRTC_LOG)
   congestion_controller_->GetBitrateController()->SetEventLog(event_log_);
+#endif
 
   module_process_thread_->Start();
   module_process_thread_->RegisterModule(call_stats_.get());
@@ -433,8 +435,10 @@ webrtc::VideoSendStream* Call::CreateVideoSendStream(
   }
   send_stream->SignalNetworkState(video_network_state_);
   UpdateAggregateNetworkState();
+#if defined(WEBRCT_LOG)
   if (event_log_)
     event_log_->LogVideoSendStreamConfig(config);
+#endif
   return send_stream;
 }
 
@@ -498,8 +502,10 @@ webrtc::VideoReceiveStream* Call::CreateVideoReceiveStream(
   }
   receive_stream->SignalNetworkState(video_network_state_);
   UpdateAggregateNetworkState();
+#if defined(WEBRTC_LOG)
   if (event_log_)
     event_log_->LogVideoReceiveStreamConfig(config);
+#endif
   return receive_stream;
 }
 
@@ -798,9 +804,10 @@ PacketReceiver::DeliveryStatus Call::DeliverRtcp(MediaType media_type,
         rtcp_delivered = true;
     }
   }
-
+#if defined(WEBRTC_LOG)
   if (event_log_ && rtcp_delivered)
     event_log_->LogRtcpPacket(kIncomingPacket, media_type, packet, length);
+#endif
 
   return rtcp_delivered ? DELIVERY_OK : DELIVERY_PACKET_ERROR;
 }
@@ -827,8 +834,10 @@ PacketReceiver::DeliveryStatus Call::DeliverRtp(MediaType media_type,
       auto status = it->second->DeliverRtp(packet, length, packet_time)
                         ? DELIVERY_OK
                         : DELIVERY_PACKET_ERROR;
+#if defined(WEBRCT_LOG)
       if (status == DELIVERY_OK && event_log_)
         event_log_->LogRtpHeader(kIncomingPacket, media_type, packet, length);
+#endif
       return status;
     }
   }
@@ -839,8 +848,10 @@ PacketReceiver::DeliveryStatus Call::DeliverRtp(MediaType media_type,
       auto status = it->second->DeliverRtp(packet, length, packet_time)
                         ? DELIVERY_OK
                         : DELIVERY_PACKET_ERROR;
+#if defined(WEBRTC_LOG)
       if (status == DELIVERY_OK && event_log_)
         event_log_->LogRtpHeader(kIncomingPacket, media_type, packet, length);
+#endif
       return status;
     }
   }

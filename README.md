@@ -45,11 +45,14 @@ construct webrct with cmake based on newest source code
 
 * auxiliary lib
 
- * gtk2.0(not 3.0, the lib is libgtk-x11-2.0.so), glib, atk, cairo, pango, gdk2.0( lib name is libgdk-x11-2.0.so)
+ * libgtk2.0-dev(not 3.0, the lib is libgtk-x11-2.0.so), glib, atk, cairo, pango, gdk2.0( lib name is libgdk-x11-2.0.so)
  * X11 lib: XQuartz(for mac os x), libx11-dev(for linux)
 
 
 * Note: type
 
  * ATOM (windows type)
+ * *.pb.h:  pb is the shortcut of platform build, WEBRTC_ANDROID_PLATFORM_BUILD
+
+* config and compile problem
  * cmake missing:JPEG_LIBRARY JPEG_INCLUDE_DIR; install libjpeg-dev

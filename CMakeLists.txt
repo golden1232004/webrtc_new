@@ -25,6 +25,11 @@ option(HAVE_WEBRTC_VIDEO "" ON)
 if (HAVE_WEBRTC_VIDEO)
   add_definitions(-DHAVE_WEBRTC_VIDEO)
 endif()
+option(HAVE_WEBRTC_VOICE "" ON)
+if (HAVE_WEBRTC_VOICE)
+  add_definitions(-DHAVE_WEBRTC_VOICE)
+endif()
+
 option(UNIT_TEST "" OFF)
 if (UNIT_TEST)
   add_definitions(-DUNIT_TEST)
@@ -63,6 +68,7 @@ endif()
 ############################## tmp macro control ##########################
 option(ENABLE_API_QUIC_DATA_TRANSPORT "" OFF)
 option(ENABLE_API_QUIC_DATA_CHANNEL "" OFF)
+option(ENABLE_RTC_EVENT_LOG "" OFF)
 option(WEBRTC_LOG "" OFF)
 ###########################################################################
 

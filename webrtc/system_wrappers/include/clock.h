@@ -17,7 +17,6 @@
 #include "webrtc/typedefs.h"
 
 namespace webrtc {
-
 // January 1970, in NTP seconds.
 const uint32_t kNtpJan1970 = 2208988800UL;
 
@@ -27,6 +26,7 @@ const double kMagicNtpFractionalUnit = 4.294967296E+9;
 // A clock interface that allows reading of absolute and relative timestamps.
 class Clock {
  public:
+  //Clock(){}
   virtual ~Clock() {}
 
   // Return a timestamp in milliseconds relative to some arbitrary source; the

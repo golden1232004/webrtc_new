@@ -569,7 +569,7 @@ WebRtcVoiceEngine::WebRtcVoiceEngine(
 
 WebRtcVoiceEngine::~WebRtcVoiceEngine() {
   RTC_DCHECK(worker_thread_checker_.CalledOnValidThread());
-  LOG(LS_INFO) << "WebRtcVoiceEngine::~WebRtcVoiceEngine";
+//  LOG(LS_INFO) << "WebRtcVoiceEngine::~WebRtcVoiceEngine";
   StopAecDump();
   voe_wrapper_->base()->Terminate();
   webrtc::Trace::SetTraceCallback(nullptr);
@@ -1042,16 +1042,19 @@ void WebRtcVoiceEngine::StopAecDump() {
 
 bool WebRtcVoiceEngine::StartRtcEventLog(rtc::PlatformFile file,
                                          int64_t max_size_bytes) {
+#if defined(WEBRTC_LOG)
   RTC_DCHECK(worker_thread_checker_.CalledOnValidThread());
   webrtc::RtcEventLog* event_log = voe_wrapper_->codec()->GetEventLog();
   if (event_log) {
     return event_log->StartLogging(file, max_size_bytes);
   }
   LOG_RTCERR0(StartRtcEventLog);
+#endif //
   return false;
 }
 
 void WebRtcVoiceEngine::StopRtcEventLog() {
+#if defined(WEBRTC_LOG)
   RTC_DCHECK(worker_thread_checker_.CalledOnValidThread());
   webrtc::RtcEventLog* event_log = voe_wrapper_->codec()->GetEventLog();
   if (event_log) {
@@ -1059,6 +1062,7 @@ void WebRtcVoiceEngine::StopRtcEventLog() {
     return;
   }
   LOG_RTCERR0(StopRtcEventLog);
+#endif
 }
 
 int WebRtcVoiceEngine::CreateVoEChannel() {

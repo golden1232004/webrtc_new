@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#if defined(WEBRTC_LOG)
+#if defined(UNIT_TEST)
 #include <iostream>
 #include <memory>
 #include <sstream>
@@ -184,4 +184,4 @@ int main(int argc, char* argv[]) {
             << "output file." << std::endl;
   return 0;
 }
-#endif //#if defined(WEBRTC_LOG)
+#endif //UNIT_TEST

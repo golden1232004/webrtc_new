@@ -7,16 +7,15 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#if defined(WEBRTC_LOG)
 #ifndef WEBRTC_CALL_RTC_EVENT_LOG_H_
 #define WEBRTC_CALL_RTC_EVENT_LOG_H_
-
 #include <memory>
 #include <string>
 
 #include "webrtc/base/platform_file.h"
 #include "webrtc/video_receive_stream.h"
 #include "webrtc/video_send_stream.h"
+#include "webrtc/system_wrappers/include/clock.h"
 
 namespace webrtc {
 
@@ -26,7 +25,7 @@ namespace rtclog {
 class EventStream;
 }  // namespace rtclog
 
-class Clock;
+class Clock; //#include "webrtc/system_wrappers/include/clock.h"
 class RtcEventLogImpl;
 
 enum class MediaType;
@@ -36,7 +35,6 @@ enum PacketDirection { kIncomingPacket = 0, kOutgoingPacket };
 class RtcEventLog {
  public:
   virtual ~RtcEventLog() {}
-
   // Factory method to create an RtcEventLog object.
   static std::unique_ptr<RtcEventLog> Create(const Clock* clock);
 
@@ -109,4 +107,3 @@ class RtcEventLog {
 }  // namespace webrtc
 
 #endif  // WEBRTC_CALL_RTC_EVENT_LOG_H_
-#endif //#if defined(WEBRTC_LOG)

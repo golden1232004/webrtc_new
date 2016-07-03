@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#if defined(WEBRTC_LOG)
+#if defined(ENABLE_RTC_EVENT_LOG)
 #include "webrtc/call/rtc_event_log_parser.h"
 
 #include <string.h>
@@ -392,4 +392,4 @@ void ParsedRtcEventLog::GetBwePacketLossEvent(size_t index,
 }
 
 }  // namespace webrtc
-#endif //#if defined(WEBRTC_LOG)
+#endif //ENABLE_RTC_EVENT_LOG

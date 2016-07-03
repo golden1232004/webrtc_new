@@ -7,7 +7,6 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#if defined(WEBRTC_LOG)
 #include "webrtc/call/rtc_event_log.h"
 
 #include <limits>
@@ -39,7 +38,6 @@
 namespace webrtc {
 
 #ifndef ENABLE_RTC_EVENT_LOG
-
 // No-op implementation if flag is not set.
 class RtcEventLogNullImpl final : public RtcEventLog {
  public:
@@ -466,4 +464,3 @@ std::unique_ptr<RtcEventLog> RtcEventLog::Create(const Clock* clock) {
 }
 
 }  // namespace webrtc
-#endif //#if defined(WEBRTC_LOG)

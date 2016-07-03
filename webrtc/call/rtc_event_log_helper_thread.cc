@@ -7,7 +7,6 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#if defined(WEBRTC_LOG)
 #include "webrtc/call/rtc_event_log_helper_thread.h"
 
 #include <algorithm>
@@ -314,4 +313,3 @@ bool RtcEventLogHelperThread::ThreadOutputFunction(void* obj) {
 }  // namespace webrtc
 
 #endif  // ENABLE_RTC_EVENT_LOG
-#endif //#if defined(WEBRTC_LOG)

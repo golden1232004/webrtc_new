@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "webrtc/modules/video_coding/utility/h264_bitstream_parser.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -60,3 +60,4 @@ TEST(H264BitstreamParserTest, ReportsLastSliceQpForImageSlices) {
 }
 
 }  // namespace webrtc
+#endif //#if defined(UNIT_TEST)

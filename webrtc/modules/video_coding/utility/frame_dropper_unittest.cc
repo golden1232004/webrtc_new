@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "webrtc/modules/video_coding/utility/frame_dropper.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -159,3 +159,4 @@ TEST_F(FrameDropperTest, TrafficVolumeAboveAvailableBandwidth) {
 }
 
 }  // namespace webrtc
+#endif //UNIT_TEST

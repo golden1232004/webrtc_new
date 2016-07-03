@@ -13,6 +13,7 @@ add_subdirectory(base)
 
 add_subdirectory(p2p)
 add_subdirectory(media)
+add_subdirectory(audio)
 add_subdirectory(pc)
 add_subdirectory(common_video)
 add_subdirectory(system_wrappers)

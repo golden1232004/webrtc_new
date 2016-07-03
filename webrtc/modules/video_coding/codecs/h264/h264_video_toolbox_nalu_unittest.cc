@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  *
  */
-
+#if defined(UNIT_TEST)
 #include <memory>
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -186,3 +186,4 @@ TEST(AvccBufferWriterTest, TestOverflow) {
 }  // namespace webrtc
 
 #endif  // WEBRTC_VIDEO_TOOLBOX_SUPPORTED
+#endif //UNIT_TEST

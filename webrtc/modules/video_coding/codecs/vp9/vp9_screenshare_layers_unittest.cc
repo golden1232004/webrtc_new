@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include <limits>
 #include <memory>
 
@@ -322,3 +322,4 @@ TEST_F(ScreenshareLayerTestVP9, TimestampWrap) {
 }
 
 }  // namespace webrtc
+#endif //UNIT_TEST

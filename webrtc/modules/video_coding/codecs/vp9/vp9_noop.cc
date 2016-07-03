@@ -9,9 +9,9 @@
  *
  */
 
-#if !defined(RTC_DISABLE_VP9)
-#error
-#endif  // !defined(RTC_DISABLE_VP9)
+// #if !defined(RTC_DISABLE_VP9)
+// #error
+// #endif  // !defined(RTC_DISABLE_VP9)
 
 #include "webrtc/base/checks.h"
 #include "webrtc/modules/video_coding/codecs/vp9/include/vp9.h"

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 #include "webrtc/modules/video_coding/include/video_codec_interface.h"
 #include "webrtc/modules/video_coding/codecs/vp8/default_temporal_layers.h"
@@ -204,3 +204,4 @@ TEST(TemporalLayersTest, KeyFrame) {
   EXPECT_EQ(true, vp8_info.layerSync);
 }
 }  // namespace webrtc
+#endif //#if defined(UNIT_TEST)

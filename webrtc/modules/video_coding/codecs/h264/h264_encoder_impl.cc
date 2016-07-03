@@ -13,9 +13,9 @@
 
 #include <limits>
 
-#include "third_party/openh264/src/codec/api/svc/codec_api.h"
-#include "third_party/openh264/src/codec/api/svc/codec_app_def.h"
-#include "third_party/openh264/src/codec/api/svc/codec_def.h"
+#include "third_party/openh264/codec/api/svc/codec_api.h"
+#include "third_party/openh264/codec/api/svc/codec_app_def.h"
+#include "third_party/openh264/codec/api/svc/codec_def.h"
 
 #include "webrtc/base/checks.h"
 #include "webrtc/base/logging.h"

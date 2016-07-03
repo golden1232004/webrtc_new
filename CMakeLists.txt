@@ -70,6 +70,8 @@ option(ENABLE_API_QUIC_DATA_TRANSPORT "" OFF)
 option(ENABLE_API_QUIC_DATA_CHANNEL "" OFF)
 option(ENABLE_RTC_EVENT_LOG "" OFF)
 option(WEBRTC_LOG "" OFF)
+#option(RTC_DISABLE_VP9 "" ON)
+
 ###########################################################################
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)

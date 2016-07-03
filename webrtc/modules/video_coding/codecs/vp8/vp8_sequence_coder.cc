@@ -9,8 +9,9 @@
  */
 
 #include <memory>
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
+#endif //
 #include "webrtc/base/checks.h"
 #include "webrtc/base/timeutils.h"
 #include "webrtc/common_video/include/video_image.h"
@@ -82,7 +83,11 @@ class Vp8SequenceCoderDecodeCallback : public webrtc::DecodedImageCallback {
 };
 
 int Vp8SequenceCoderDecodeCallback::Decoded(webrtc::VideoFrame& image) {
+#if defined(UNIT_TEST)
   EXPECT_EQ(0, webrtc::PrintVideoFrame(image, decoded_file_));
+#else
+  webrtc::PrintVideoFrame(image, decoded_file_);
+#endif //
   return 0;
 }
 
@@ -145,7 +150,11 @@ int SequenceCoder(webrtc::test::CommandLineParser* parser) {
     fprintf(stderr, "Error: Cannot initialize vp8 encoder\n");
     return -1;
   }
+#if defined(UNIT_TEST)
   EXPECT_EQ(0, decoder->InitDecode(&inst, 1));
+#else
+  decoder->InitDecode(&inst, 1);
+#endif
   webrtc::VideoFrame input_frame;
   size_t length = webrtc::CalcBufferSize(webrtc::kI420, width, height);
   std::unique_ptr<uint8_t[]> frame_buffer(new uint8_t[length]);
@@ -184,9 +193,11 @@ int SequenceCoder(webrtc::test::CommandLineParser* parser) {
       8.0 * encoder_callback.encoded_bytes() / (frame_cnt / inst.maxFramerate);
   printf("Actual bitrate: %f kbps\n", actual_bit_rate / 1000);
   webrtc::test::QualityMetricsResult psnr_result, ssim_result;
+#if defined(UNIT_TEST)
   EXPECT_EQ(0, webrtc::test::I420MetricsFromFiles(
                    input_file_name.c_str(), output_file_name.c_str(),
                    inst.width, inst.height, &psnr_result, &ssim_result));
+#endif
   printf("PSNR avg: %f[dB], min: %f[dB]\nSSIM avg: %f, min: %f\n",
          psnr_result.average, psnr_result.min, ssim_result.average,
          ssim_result.min);

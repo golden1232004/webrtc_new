@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 #include "vpx/vpx_encoder.h"
 #include "vpx/vp8cx.h"
@@ -98,3 +98,4 @@ TEST_F(TestRPS, TestWrap) {
   EXPECT_EQ(rps_.EncodeFlags(8, false, 1), kNoPropagationGolden);
   EXPECT_EQ(rps_.EncodeFlags(10, false, 90 * 100), kPropagateAltRef);
 }
+#endif //#if defined(UNIT_TEST)

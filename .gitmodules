@@ -10,3 +10,6 @@
 [submodule "third_party/ffmpeg"]
 	path = third_party/ffmpeg
 	url = git@github.com:golden1232004/ffmpeg.git
+[submodule "third_party/openh264"]
+	path = third_party/openh264
+	url = git@github.com:golden1232004/openh264.git

@@ -7,3 +7,6 @@
 [submodule "third_party/opus"]
 	path = third_party/opus
 	url = git@github.com:golden1232004/opus.git
+[submodule "third_party/ffmpeg"]
+	path = third_party/ffmpeg
+	url = git@github.com:golden1232004/ffmpeg.git

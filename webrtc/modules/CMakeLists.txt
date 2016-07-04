@@ -1,3 +1,4 @@
 add_subdirectory(video_capture)
 add_subdirectory(audio_coding)
 add_subdirectory(video_coding)
+add_subdirectory(congestion_controller)

@@ -75,7 +75,15 @@ option(HAVE_SRTP "" OFF)
 if(HAVE_SRTP)
   add_definitions(-DHAVE_SRTP)
 endif()
-###########################################################################
+option(RTC_USE_OPENMAX_DL "" OFF)
+############################## optimize control ###########################
+
+option(ENABLE_OPTIMIZE_SSE "" OFF)
+option(ENABLE_OPTIMIZE_NEON "" OFF)
+option(WEBRTC_MIPS "" OFF)
+
+
+
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)
 

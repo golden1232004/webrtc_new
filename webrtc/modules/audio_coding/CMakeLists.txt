@@ -10,6 +10,6 @@ include_directories(${CMAKE_SOURCE_DIR}/third_party/opus/src)
 include_directories(${CMAKE_SOURCE_DIR}/third_party/opus/include)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-file(GLOB lib_src ./acm2/*.cc ./codecs/*.cc ./codecs/isac/*.cc ./codecs/g711/*.cc ./codecs/g711/*.c ./codecs/cng/*.cc ./codecs/pcm16b/*.cc ./neteq/*.cc )
+file(GLOB lib_src ./acm2/*.cc ./codecs/*.cc ./codecs/isac/*.cc ./codecs/g711/*.cc ./codecs/g711/*.c ./codecs/cng/*.cc ./codecs/pcm16b/*.cc ./codecs/pcm16b/*.c ./neteq/*.cc )
 
 add_library(module_audio_coding STATIC ${lib_src})

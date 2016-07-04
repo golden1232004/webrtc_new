@@ -4,6 +4,6 @@ project(common_audio)
 
 
 include_directories(${CMAKE_SOURCE_DIR})
-file(GLOB src_file ./*.cc ./vad/*.cc ./resampler/*.cc ./signal_processing/*.c)
+file(GLOB src_file ./*.cc ./vad/*.cc ./vad/*.c ./resampler/*.cc ./signal_processing/*.c)
 
 add_library(common_audio STATIC ${src_file})

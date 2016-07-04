@@ -42,7 +42,7 @@ construct webrct with cmake based on newest source code
  * openssl(lib name is ssl) and cryto
  * opus: it is constructed by make. so compile indiviually
  * ffmpeg: comile indiviually (TODO)
- * libvpx: (TODO)
+ * libvpx: compile individually and make install. maybe install yasm first
  * openh264: use branch openh264v1.5. Because the newest version delete sSliceCfg of struct SSpatialLayerConfig.
 
 

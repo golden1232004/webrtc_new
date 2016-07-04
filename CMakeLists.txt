@@ -71,7 +71,10 @@ option(ENABLE_API_QUIC_DATA_CHANNEL "" OFF)
 option(ENABLE_RTC_EVENT_LOG "" OFF)
 option(WEBRTC_LOG "" OFF)
 #option(RTC_DISABLE_VP9 "" ON)
-
+option(HAVE_SRTP "" OFF)
+if(HAVE_SRTP)
+  add_definitions(-DHAVE_SRTP)
+endif()
 ###########################################################################
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11" CACHE STRING "" FORCE)

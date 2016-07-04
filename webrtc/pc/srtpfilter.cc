@@ -27,18 +27,18 @@
 
 #ifdef HAVE_SRTP
 extern "C" {
-#ifdef SRTP_RELATIVE_PATH
+#  ifdef SRTP_RELATIVE_PATH
 #include "srtp.h"  // NOLINT
 #include "srtp_priv.h"  // NOLINT
-#else
+#  else
 #include "third_party/libsrtp/srtp/include/srtp.h"
 #include "third_party/libsrtp/srtp/include/srtp_priv.h"
-#endif  // SRTP_RELATIVE_PATH
+#  endif  // SRTP_RELATIVE_PATH
 }
-#ifdef  ENABLE_EXTERNAL_AUTH
+#  ifdef  ENABLE_EXTERNAL_AUTH
 #include "webrtc/pc/externalhmac.h"
-#endif  // ENABLE_EXTERNAL_AUTH
-#if !defined(NDEBUG)
+#  endif  // ENABLE_EXTERNAL_AUTH
+#  if !defined(NDEBUG)
 extern "C" debug_module_t mod_srtp;
 extern "C" debug_module_t mod_auth;
 extern "C" debug_module_t mod_cipher;
@@ -46,8 +46,8 @@ extern "C" debug_module_t mod_stat;
 extern "C" debug_module_t mod_alloc;
 extern "C" debug_module_t mod_aes_icm;
 extern "C" debug_module_t mod_aes_hmac;
-#endif
-#else
+#  endif
+#else  //HAVE_SRTP
 // SrtpFilter needs that constant.
 #define SRTP_MASTER_KEY_LEN 30
 #endif  // HAVE_SRTP
@@ -796,18 +796,30 @@ SrtpSession::SrtpSession() {
 
 SrtpSession::~SrtpSession() {
 }
-
+bool SrtpSession::SetSend(int cs, const uint8_t* key, int len)
+{
+  return SrtpNotAvailable(__FUNCTION__);
+}
 bool SrtpSession::SetSend(const std::string& cs, const uint8_t* key, int len) {
   return SrtpNotAvailable(__FUNCTION__);
 }
-
+bool SrtpSession::SetRecv(int cs, const uint8_t* key, int len)
+{
+  return SrtpNotAvailable(__FUNCTION__);
+}
 bool SrtpSession::SetRecv(const std::string& cs, const uint8_t* key, int len) {
   return SrtpNotAvailable(__FUNCTION__);
 }
-
 bool SrtpSession::ProtectRtp(void* data, int in_len, int max_len,
                              int* out_len) {
   return SrtpNotAvailable(__FUNCTION__);
+}
+bool SrtpSession::ProtectRtp(void* p,
+                               int in_len,
+                               int max_len,
+                               int* out_len,
+                               int64_t* index) {
+    return SrtpNotAvailable(__FUNCTION__);
 }
 
 bool SrtpSession::ProtectRtcp(void* data, int in_len, int max_len,
@@ -826,7 +838,11 @@ bool SrtpSession::UnprotectRtcp(void* data, int in_len, int* out_len) {
 void SrtpSession::set_signal_silent_time(uint32_t signal_silent_time) {
   // Do nothing.
 }
-
+void SrtpSession::set_signal_silent_time(int signal_silent_time_in_ms)
+{}
+bool SrtpSession::GetRtpAuthParams(uint8_t** key, int* key_len, int* tag_len) {
+  return false;
+}
 #endif  // HAVE_SRTP
 
 ///////////////////////////////////////////////////////////////////////////////

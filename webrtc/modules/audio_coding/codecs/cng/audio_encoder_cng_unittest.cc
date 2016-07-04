@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include <memory>
 #include <vector>
 
@@ -503,3 +503,4 @@ TEST_F(AudioEncoderCngDeathTest, EncoderFrameSizeTooLarge) {
 #endif  // GTEST_HAS_DEATH_TEST
 
 }  // namespace webrtc
+#endif //UNIT_TEST

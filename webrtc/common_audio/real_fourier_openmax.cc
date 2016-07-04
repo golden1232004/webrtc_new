@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(RTC_USE_OPENMAX_DL)
 #include "webrtc/common_audio/real_fourier_openmax.h"
 
 #include <cstdlib>
@@ -67,3 +67,4 @@ void RealFourierOpenmax::Inverse(const complex<float>* src, float* dest) const {
 
 }  // namespace webrtc
 
+#endif //

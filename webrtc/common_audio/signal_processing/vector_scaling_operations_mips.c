@@ -13,7 +13,7 @@
  * This file contains implementations of the functions
  * WebRtcSpl_ScaleAndAddVectorsWithRound_mips()
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
 
 int WebRtcSpl_ScaleAndAddVectorsWithRound_mips(const int16_t* in_vector1,
@@ -55,3 +55,4 @@ int WebRtcSpl_ScaleAndAddVectorsWithRound_mips(const int16_t* in_vector1,
   }
   return 0;
 }
+#endif //WEBRTC_MIPS

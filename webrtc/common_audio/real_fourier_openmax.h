@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(RTC_USE_OPENMAX_DL)
 #ifndef WEBRTC_COMMON_AUDIO_REAL_FOURIER_OPENMAX_H_
 #define WEBRTC_COMMON_AUDIO_REAL_FOURIER_OPENMAX_H_
 
@@ -42,3 +42,4 @@ class RealFourierOpenmax : public RealFourier {
 
 #endif  // WEBRTC_COMMON_AUDIO_REAL_FOURIER_OPENMAX_H_
 
+#endif //#if defined(RTC_USE_OPENMAX_DL)

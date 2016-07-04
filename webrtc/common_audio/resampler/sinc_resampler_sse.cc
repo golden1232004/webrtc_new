@@ -10,7 +10,7 @@
 
 // Modified from the Chromium original:
 // src/media/base/simd/sinc_resampler_sse.cc
-
+#if defined(ENABLE_OPTIMIZE_SSE)
 #include "webrtc/common_audio/resampler/sinc_resampler.h"
 
 #include <xmmintrin.h>
@@ -57,3 +57,4 @@ float SincResampler::Convolve_SSE(const float* input_ptr, const float* k1,
 }
 
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_SSE)

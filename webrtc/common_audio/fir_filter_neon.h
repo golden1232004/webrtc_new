@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #ifndef WEBRTC_COMMON_AUDIO_FIR_FILTER_NEON_H_
 #define WEBRTC_COMMON_AUDIO_FIR_FILTER_NEON_H_
 
@@ -36,3 +36,4 @@ class FIRFilterNEON : public FIRFilter {
 }  // namespace webrtc
 
 #endif  // WEBRTC_COMMON_AUDIO_FIR_FILTER_NEON_H_
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

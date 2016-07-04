@@ -7,6 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+#if defined(WEBRTC_MIPS)
 #include <assert.h>
 
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
@@ -138,3 +139,4 @@ void WebRtcSpl_FilterARFastQ12(const int16_t* data_in,
   );
 }
 
+#endif //WEBRTC_MIPS

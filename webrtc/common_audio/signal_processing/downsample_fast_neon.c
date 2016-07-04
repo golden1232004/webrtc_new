@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
 
 #include <arm_neon.h>
@@ -215,3 +215,4 @@ int WebRtcSpl_DownsampleFastNeon(const int16_t* data_in,
 
   return 0;
 }
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

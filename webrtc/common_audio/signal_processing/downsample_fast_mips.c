@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
 
 // Version of WebRtcSpl_DownsampleFast() for MIPS platforms.
@@ -167,3 +167,4 @@ int WebRtcSpl_DownsampleFast_mips(const int16_t* data_in,
 #endif  // #if defined(MIPS_DSP_R2_LE)
   return 0;
 }
+#endif //WEBRTC_MIPS

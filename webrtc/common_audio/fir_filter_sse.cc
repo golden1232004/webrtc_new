@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_SSE)
 #include "webrtc/common_audio/fir_filter_sse.h"
 
 #include <assert.h>
@@ -79,3 +79,4 @@ void FIRFilterSSE2::Filter(const float* in, size_t length, float* out) {
 }
 
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_SSE)

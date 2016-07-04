@@ -15,7 +15,7 @@
  * The description header can be found in signal_processing_library.h.
  *
  */
-
+#if defined(WEBRTC_MIPS)
 #include <assert.h>
 
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
@@ -374,3 +374,4 @@ int32_t WebRtcSpl_MinValueW32_mips(const int32_t* vector, size_t length) {
 
   return minimum;
 }
+#endif //WEBRTC_MIPS

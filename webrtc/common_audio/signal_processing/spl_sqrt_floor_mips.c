@@ -28,7 +28,7 @@
 
 // Minor modifications in code style for WebRTC, 2012.
 // Code optimizations for MIPS, 2013.
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
 
 /*
@@ -205,3 +205,4 @@ int32_t WebRtcSpl_SqrtFloor(int32_t value)
   return root >> 1;
 }
 
+#endif //WEBRTC_MIPS

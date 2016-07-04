@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "webrtc/common_audio/fir_filter_neon.h"
 
 #include <arm_neon.h>
@@ -70,3 +70,4 @@ void FIRFilterNEON::Filter(const float* in, size_t length, float* out) {
 }
 
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

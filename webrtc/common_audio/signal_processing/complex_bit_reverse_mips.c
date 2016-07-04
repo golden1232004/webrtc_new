@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/common_audio/signal_processing/include/signal_processing_library.h"
 
 static int16_t coefTable_7[] = {
@@ -174,3 +174,4 @@ void WebRtcSpl_ComplexBitReverse(int16_t frfi[], int stages) {
     );
   }
 }
+#endif //WEBRTC_MIPS

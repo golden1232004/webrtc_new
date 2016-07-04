@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -281,3 +281,4 @@ int32_t WebRtcSpl_MinValueW32Neon(const int32_t* vector, size_t length) {
   return minimum;
 }
 
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

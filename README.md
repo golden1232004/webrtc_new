@@ -39,7 +39,7 @@ construct webrct with cmake based on newest source code
 
 * third_party
 
- * openssl(lib name is ssl) and cryto
+ * openssl(lib name is ssl, package is libssl-dev) and cryto
  * opus: it is constructed by make. so compile indiviually
  * ffmpeg: comile indiviually (TODO)
  * libvpx: compile individually and make install. maybe install yasm first
@@ -48,8 +48,8 @@ construct webrct with cmake based on newest source code
 
 * auxiliary lib
 
- * libgtk2.0-dev(not 3.0, the lib is libgtk-x11-2.0.so), glib, atk, cairo, pango, gdk2.0( lib name is libgdk-x11-2.0.so)
- * X11 lib: XQuartz(for mac os x), libx11-dev(for linux)
+ * libgtk2.0-dev(not 3.0, the lib is libgtk-x11-2.0.so), glib, atk, cairo, pango, gdk2.0( lib name is libgdk-x11-2.0.so, package name is libgdk-pixbuf2.0-dev)
+ * X11 lib: XQuartz(for mac os x), libx11-dev(for linux), libxrandr-dev, libxcomposite-dev
 
 
 * Note: type

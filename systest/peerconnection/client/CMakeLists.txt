@@ -28,12 +28,34 @@ file(GLOB src_file ./src/*.cc)
 
 add_library(peerconnection_client STATIC ${src_file})
 
-set(EXT_LIB pthread  dl rt  gtk-x11-2.0 glib-2.0 atk-1.0 pango-1.0 cairo gdk-x11-2.0 gobject-2.0) #auxiliary lib 
+set(EXT_LIB pthread  dl rt  gtk-x11-2.0 glib-2.0 atk-1.0 pango-1.0 cairo gdk-x11-2.0 gobject-2.0 jpeg) #auxiliary lib 
 set(3RDPARTY_LIB ssl crypto jsoncpp yuv vpx)
 link_directories(${CMAKE_SOURCE_DIR}/build/bin) # otherwise, can not find libjsoncpp.a, I do not know the reason.
 add_executable(peerconnection_client_example test/main.cc)
 
-set(SOURCE_LIB peerconnection_client api pc media p2p common_video  module_video_capture module_audio_coding common_audio module_video_coding video module_call  rtp_rtcp  module_utility system_wrappers audio congestion_controller voice_engine webrtc base)
+set(SOURCE_LIB peerconnection_client api pc media p2p common_video  module_video_capture module_audio_coding common_audio   module_call video module_video_coding module_pacing module_video_processing rtp_rtcp  module_utility system_wrappers audio congestion_controller voice_engine webrtc base)
+
+# call <- video <- module_video_coding
+               #<- module_pacing
+               #<- module_video_processing(TODO)
+
+
+
+
+# video <- call
+       #<- common_video
+
+# rtp_rtcp <- common_video
+
+# congestion_controller <- module_remote_bitrate_estimator (TODO)
+                       #<- module_pacing
+                       #<- module_bitrate_controller (TODO)
+
+#voice_engine <- module_audio_processing (TODO)
+             #<- module_audio_coding
+             #<- module_utility
+
+
 
 target_link_libraries(peerconnection_client_example ${SOURCE_LIB} ${EXT_LIB} ${3RDPARTY_LIB})
 

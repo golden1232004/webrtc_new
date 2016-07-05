@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-
+#if defined(UNIT_TEST)
 #include "webrtc/modules/rtp_rtcp/source/rtp_format_vp8_test_helper.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -249,3 +249,4 @@ void RtpFormatVp8TestHelper::CheckPacket(size_t send_bytes,
 }  // namespace test
 
 }  // namespace webrtc
+#endif //#if defined(UNIT_TEST)

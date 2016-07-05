@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #ifndef WEBRTC_MODULES_VIDEO_PROCESSING_UTIL_DENOISER_FILTER_NEON_H_
 #define WEBRTC_MODULES_VIDEO_PROCESSING_UTIL_DENOISER_FILTER_NEON_H_
 
@@ -40,3 +40,4 @@ class DenoiserFilterNEON : public DenoiserFilter {
 }  // namespace webrtc
 
 #endif  // WEBRTC_MODULES_VIDEO_PROCESSING_UTIL_DENOISER_FILTER_NEON_H_
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

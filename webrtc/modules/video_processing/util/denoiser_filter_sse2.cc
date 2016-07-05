@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_SSE)
 #include <emmintrin.h>
 #include "webrtc/modules/video_processing/util/denoiser_filter_sse2.h"
 
@@ -207,3 +207,4 @@ DenoiserDecision DenoiserFilterSSE2::MbDenoise(uint8_t* mc_running_avg_y,
 }
 
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_SSE)

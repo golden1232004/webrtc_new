@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 
 #include "webrtc/modules/video_processing/util/denoiser_filter_neon.h"
@@ -193,3 +193,4 @@ DenoiserDecision DenoiserFilterNEON::MbDenoise(uint8_t* mc_running_avg_y,
 }
 
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

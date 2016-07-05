@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_ANDROID)
 #include <android/log.h>
 
 #include <memory>
@@ -264,3 +264,4 @@ JavaClass JVM::GetClass(const char* name) {
 }
 
 }  // namespace webrtc
+#endif //#if defined(WEBRTC_ANDROID)

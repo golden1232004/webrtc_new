@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_ANDROID)
 #include "webrtc/base/checks.h"
 #include "webrtc/modules/utility/include/helpers_android.h"
 
@@ -121,3 +121,4 @@ AttachThreadScoped::~AttachThreadScoped() {
 JNIEnv* AttachThreadScoped::env() { return env_; }
 
 }  // namespace webrtc
+#endif //#if defined(WEBRTC_ANDROID)

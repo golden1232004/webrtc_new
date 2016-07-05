@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_ANDROID)
 #ifndef WEBRTC_MODULES_UTILITY_INCLUDE_HELPERS_ANDROID_H_
 #define WEBRTC_MODULES_UTILITY_INCLUDE_HELPERS_ANDROID_H_
 
@@ -85,3 +85,4 @@ class ScopedGlobalRef {
 }  // namespace webrtc
 
 #endif  // WEBRTC_MODULES_UTILITY_INCLUDE_HELPERS_ANDROID_H_
+#endif //#if defined(WEBRTC_ANDROID)

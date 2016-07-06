@@ -33,17 +33,15 @@ set(3RDPARTY_LIB ssl crypto jsoncpp yuv vpx)
 link_directories(${CMAKE_SOURCE_DIR}/build/bin) # otherwise, can not find libjsoncpp.a, I do not know the reason.
 add_executable(peerconnection_client_example test/main.cc)
 
-set(SOURCE_LIB peerconnection_client api pc media p2p common_video  module_video_capture module_audio_coding common_audio   module_call video module_video_coding module_pacing module_video_processing rtp_rtcp  module_utility system_wrappers audio congestion_controller voice_engine webrtc base)
+set(SOURCE_LIB peerconnection_client api pc media p2p common_video  module_video_capture module_audio_coding common_audio   video module_call  module_video_coding module_pacing module_video_processing rtp_rtcp  module_utility system_wrappers audio congestion_controller voice_engine webrtc base)
 
 # call <- video <- module_video_coding
                #<- module_pacing
                #<- module_video_processing(TODO)
 
-
-
-
 # video <- call
        #<- common_video
+#* video::VideoReceiveStream <- call::TransportAdapter
 
 # rtp_rtcp <- common_video
 
@@ -55,11 +53,7 @@ set(SOURCE_LIB peerconnection_client api pc media p2p common_video  module_video
              #<- module_audio_coding
              #<- module_utility
 
+# yuv <- jpeg
 
 
-target_link_libraries(peerconnection_client_example ${SOURCE_LIB} ${EXT_LIB} ${3RDPARTY_LIB})
-
-
-
-
-
+target_link_libraries(peerconnection_client_example ${SOURCE_LIB} ${3RDPARTY_LIB} ${EXT_LIB})

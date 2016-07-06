@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include <memory>
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -450,3 +450,4 @@ TEST_P(BweSimulation, GccComparisonChoke) {
 }  // namespace testing
 }  // namespace webrtc
 
+#endif //UNIT_TEST

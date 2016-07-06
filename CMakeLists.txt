@@ -81,6 +81,10 @@ option(RTC_USE_OPENMAX_DL "" OFF)
 option(ENABLE_OPTIMIZE_SSE "" OFF)
 option(ENABLE_OPTIMIZE_NEON "" OFF)
 option(WEBRTC_MIPS "" OFF)
+option(WEBRTC_NS_FLOAT "" ON)
+if (WEBRTC_NS_FLOAT)
+  add_definitions(-DWEBRTC_NS_FLOAT)
+endif ()
 
 
 

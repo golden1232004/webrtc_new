@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include <algorithm>
 #include <vector>
 
@@ -404,3 +404,4 @@ TEST_F(BitrateControllerTest, SetReservedBitrate) {
   bandwidth_observer_->OnReceivedEstimatedBitrate(1);
   EXPECT_EQ(100000, bitrate_observer_.last_bitrate_);
 }
+#endif //UNIT_TEST

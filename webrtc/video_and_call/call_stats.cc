@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include "webrtc/video/call_stats.h"
+#include "webrtc/video_and_call/call_stats.h"
 
 #include <algorithm>
 

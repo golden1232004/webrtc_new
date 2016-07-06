@@ -26,7 +26,7 @@
 #include "webrtc/modules/rtp_rtcp/include/rtp_rtcp.h"
 #include "webrtc/modules/utility/include/process_thread.h"
 #include "webrtc/modules/video_coding/utility/ivf_file_writer.h"
-#include "webrtc/video/call_stats.h"
+#include "webrtc/video_and_call/call_stats.h"
 #include "webrtc/video/video_capture_input.h"
 #include "webrtc/video/vie_remb.h"
 #include "webrtc/video_send_stream.h"

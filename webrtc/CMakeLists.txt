@@ -22,6 +22,7 @@ add_subdirectory(system_wrappers)
 add_subdirectory(voice_engine)
 add_subdirectory(modules)
 add_subdirectory(call)
+add_subdirectory(video_and_call)
 
 #add_subdirectory(./sound)
 #add_subdirectory(./libjingle)

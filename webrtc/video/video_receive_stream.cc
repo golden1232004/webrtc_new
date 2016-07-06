@@ -23,7 +23,7 @@
 #include "webrtc/modules/video_coding/include/video_coding.h"
 #include "webrtc/modules/video_coding/utility/ivf_file_writer.h"
 #include "webrtc/system_wrappers/include/clock.h"
-#include "webrtc/video/call_stats.h"
+#include "webrtc/video_and_call/call_stats.h"
 #include "webrtc/video/receive_statistics_proxy.h"
 #include "webrtc/video_receive_stream.h"
 

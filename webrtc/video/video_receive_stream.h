@@ -15,7 +15,7 @@
 #include <vector>
 
 #include "webrtc/call.h"
-#include "webrtc/call/transport_adapter.h"
+#include "webrtc/video_and_call/transport_adapter.h"
 #include "webrtc/common_video/include/incoming_video_stream.h"
 #include "webrtc/common_video/libyuv/include/webrtc_libyuv.h"
 #include "webrtc/modules/video_coding/video_coding_impl.h"

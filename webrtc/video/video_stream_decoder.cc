@@ -20,7 +20,7 @@
 #include "webrtc/modules/video_coding/video_coding_impl.h"
 #include "webrtc/modules/video_processing/include/video_processing.h"
 #include "webrtc/system_wrappers/include/metrics.h"
-#include "webrtc/video/call_stats.h"
+#include "webrtc/video_and_call/call_stats.h"
 #include "webrtc/video/payload_router.h"
 #include "webrtc/video/receive_statistics_proxy.h"
 

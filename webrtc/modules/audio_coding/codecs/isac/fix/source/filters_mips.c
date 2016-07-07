@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/codec.h"
 
 // MIPS optimized implementation of the Autocorrelation function in fixed point.
@@ -363,3 +363,4 @@ int WebRtcIsacfix_AutocorrMIPS(int32_t* __restrict r,
 
   return (order + 1);
 }
+#endif //#if defined(WEBRTC_MIPS)

@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/filterbank_internal.h"
 
 // WebRtcIsacfix_AllpassFilter2FixDec16 function optimized for MIPSDSP platform.
@@ -240,3 +240,4 @@ void WebRtcIsacfix_HighpassFilterFixDec32MIPS(int16_t* io,
     : "memory"
   );
 }
+#endif //#if defined(WEBRTC_MIPS)

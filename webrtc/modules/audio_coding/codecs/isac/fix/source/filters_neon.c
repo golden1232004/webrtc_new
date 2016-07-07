@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -112,3 +112,4 @@ int WebRtcIsacfix_AutocorrNeon(int32_t* __restrict r,
   return order + 1;
 }
 
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

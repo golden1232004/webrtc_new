@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/lpc_masking_model.h"
 
 // MIPS DSPR2 optimization for function WebRtcIsacfix_CalculateResidualEnergy
@@ -235,3 +235,4 @@ int32_t WebRtcIsacfix_CalculateResidualEnergyMIPS(int lpc_order,
 
   return residual_energy;
 }
+#endif //#if defined(WEBRTC_MIPS)

@@ -13,7 +13,7 @@
  * entropy_coding.c. Results are bit exact with the c code for
  * generic platforms.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "entropy_coding.h"
 
 #include <arm_neon.h>
@@ -216,3 +216,4 @@ void WebRtcIsacfix_MatrixProduct2Neon(const int16_t matrix0[],
     matrix_prod_index += 2;
   }
 }
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

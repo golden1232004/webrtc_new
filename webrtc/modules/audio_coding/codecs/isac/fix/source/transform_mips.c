@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/codec.h"
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/fft.h"
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/settings.h"
@@ -1292,3 +1292,4 @@ void WebRtcIsacfix_Spec2TimeMIPS(int16_t *inreQ7,
 #endif  // #if defined(MIPS_DSP_R2_LE)
   );
 }
+#endif //#if defined(WEBRTC_MIPS)

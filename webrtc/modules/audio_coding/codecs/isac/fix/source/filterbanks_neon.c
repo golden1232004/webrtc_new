@@ -12,7 +12,7 @@
 // in iSAC codec, optimized for ARM Neon platform. Bit exact with function
 // WebRtcIsacfix_AllpassFilter2FixDec16C() in filterbanks.c. Prototype
 // C code is at end of this file.
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -274,3 +274,4 @@ void WebRtcIsacfix_AllpassFilter2FixDec16Neon(
 //  filter_state_ch2[0] = state0_ch2;
 //  filter_state_ch2[1] = state1_ch2;
 //}
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

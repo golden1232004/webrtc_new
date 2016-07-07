@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/pitch_estimator.h"
 
 void WebRtcIsacfix_PitchFilterCore(int loopNumber,
@@ -131,3 +131,4 @@ void WebRtcIsacfix_PitchFilterCore(int loopNumber,
   }
   (*index2) += loopNumber;
 }
+#endif //#if defined(WEBRTC_MIPS)

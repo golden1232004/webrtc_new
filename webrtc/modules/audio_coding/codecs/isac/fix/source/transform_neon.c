@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 
 #include "webrtc/modules/audio_coding/codecs/isac/fix/source/codec.h"
@@ -477,3 +477,4 @@ void WebRtcIsacfix_Spec2TimeNeon(int16_t* inreQ7,
 
   PostShiftAndDivideAndDemodulateNeon(inreQ7, inimQ7, outre1Q16, outre2Q16, sh);
 }
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

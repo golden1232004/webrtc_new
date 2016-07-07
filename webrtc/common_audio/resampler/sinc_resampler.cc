@@ -119,7 +119,7 @@ double SincScaleFactor(double io_ratio) {
 }  // namespace
 
 // If we know the minimum architecture at compile time, avoid CPU detection.
-#if defined(WEBRTC_ARCH_X86_FAMILY)
+#if defined(WEBRTC_ARCH_X86_FAMILY) && defined(ENABLE_OPTIMIZE_SSE)
 #if defined(__SSE2__)
 #define CONVOLVE_FUNC Convolve_SSE
 void SincResampler::InitializeCPUSpecificFeatures() {}

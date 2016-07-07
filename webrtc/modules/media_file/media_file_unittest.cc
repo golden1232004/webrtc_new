@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 #include "webrtc/modules/media_file/media_file.h"
 #include "webrtc/system_wrappers/include/sleep.h"
@@ -104,3 +104,4 @@ TEST_F(MediaFileTest, MAYBE_WriteWavFile) {
 
   EXPECT_EQ(0, fclose(f));
 }
+#endif //#if defined(UNIT_TEST)

@@ -33,7 +33,7 @@ set(3RDPARTY_LIB ssl crypto jsoncpp yuv vpx)
 link_directories(${CMAKE_SOURCE_DIR}/build/bin) # otherwise, can not find libjsoncpp.a, I do not know the reason.
 add_executable(peerconnection_client_example test/main.cc)
 
-set(SOURCE_LIB peerconnection_client api pc media p2p module_video_capture voice_engine module_audio_processing module_audio_coding common_audio  module_call video rtp_rtcp common_video video_and_call  audio  module_video_coding      module_video_processing module_utility system_wrappers  congestion_controller module_remote_bitrate_estimator  module_pacing module_bitrate_controller  webrtc base)
+set(SOURCE_LIB peerconnection_client api pc media p2p module_video_capture voice_engine module_audio_conference_mixer module_audio_processing module_audio_coding common_audio  module_call video rtp_rtcp common_video video_and_call  audio  module_video_coding      module_video_processing module_utility system_wrappers  congestion_controller module_remote_bitrate_estimator  module_pacing module_bitrate_controller  webrtc base)
 
 # call <- video <- module_video_coding
                #<- module_pacing

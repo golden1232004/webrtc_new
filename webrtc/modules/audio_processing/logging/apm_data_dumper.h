@@ -7,7 +7,6 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
 #ifndef WEBRTC_MODULES_AUDIO_PROCESSING_LOGGING_APM_DATA_DUMPER_H_
 #define WEBRTC_MODULES_AUDIO_PROCESSING_LOGGING_APM_DATA_DUMPER_H_
 
@@ -22,6 +21,7 @@
 #include "webrtc/common_audio/wav_file.h"
 
 // Check to verify that the define is properly set.
+#define WEBRTC_AEC_DEBUG_DUMP 0
 #if !defined(WEBRTC_AEC_DEBUG_DUMP) || \
     (WEBRTC_AEC_DEBUG_DUMP != 0 && WEBRTC_AEC_DEBUG_DUMP != 1)
 #error "Set WEBRTC_AEC_DEBUG_DUMP to either 0 or 1"

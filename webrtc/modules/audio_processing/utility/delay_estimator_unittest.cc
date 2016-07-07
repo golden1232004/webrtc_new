@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 
 #include "webrtc/modules/audio_processing/utility/delay_estimator.h"
@@ -617,3 +617,4 @@ TEST_F(DelayEstimatorTest, VerifyHistorySizeIsSetAndKeptAfterInit) {
 // TODO(bjornv): Add tests for SoftReset...(...).
 
 }  // namespace
+#endif //

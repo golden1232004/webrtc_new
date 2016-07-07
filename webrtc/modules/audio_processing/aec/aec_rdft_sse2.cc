@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_SSE)
 #include "webrtc/modules/audio_processing/aec/aec_rdft.h"
 
 #include <emmintrin.h>
@@ -425,3 +425,4 @@ void aec_rdft_init_sse2(void) {
   rftfsub_128 = rftfsub_128_SSE2;
   rftbsub_128 = rftbsub_128_SSE2;
 }
+#endif //#if defined(ENABLE_OPTIMIZE_SSE)

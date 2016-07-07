@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_processing/aec/aec_rdft.h"
 #include "webrtc/typedefs.h"
 
@@ -1185,3 +1185,4 @@ void aec_rdft_init_mips(void) {
   cftbsub_128 = cftbsub_128_mips;
   bitrv2_128 = bitrv2_128_mips;
 }
+#endif //#if defined(WEBRTC_MIPS)

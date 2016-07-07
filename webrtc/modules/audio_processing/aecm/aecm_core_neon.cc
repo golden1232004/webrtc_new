@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "webrtc/modules/audio_processing/aecm/aecm_core.h"
 
 #include <arm_neon.h>
@@ -197,3 +197,4 @@ void WebRtcAecm_ResetAdaptiveChannelNeon(AecmCore* aecm) {
   aecm->channelAdapt16[PART_LEN] = aecm->channelStored[PART_LEN];
   aecm->channelAdapt32[PART_LEN] = (int32_t)aecm->channelStored[PART_LEN] << 16;
 }
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

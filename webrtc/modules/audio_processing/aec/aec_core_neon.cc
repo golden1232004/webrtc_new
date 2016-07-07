@@ -13,7 +13,7 @@
  *
  * Based on aec_core_sse2.c.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include <arm_neon.h>
 #include <math.h>
 #include <string.h>  // memset
@@ -734,3 +734,4 @@ void WebRtcAec_InitAec_neon(void) {
   WebRtcAec_WindowData = WindowDataNEON;
 }
 }  // namespace webrtc
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

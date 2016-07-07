@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_processing/aecm/aecm_core.h"
 
 #include <assert.h>
@@ -1563,3 +1563,4 @@ static void ComfortNoise(AecmCore* aecm,
   sgn = ((int)tt) >> 31;
   out[PART_LEN].imag = sgn == (int16_t)(tt >> 15) ? (int16_t)tt : (16384 ^ sgn);
 }
+#endif //WEBRTC_MIPS

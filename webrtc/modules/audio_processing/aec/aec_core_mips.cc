@@ -11,7 +11,7 @@
 /*
  * The core AEC algorithm, which is presented with time-aligned signals.
  */
-
+#if defined(WEBRTC_MIPS)
 #include "webrtc/modules/audio_processing/aec/aec_core.h"
 
 #include <math.h>
@@ -487,3 +487,4 @@ void WebRtcAec_InitAec_mips(void) {
   WebRtcAec_Suppress = WebRtcAec_Suppress_mips;
 }
 }  // namespace webrtc
+#endif //#if defined(WEBRTC_MIPS)

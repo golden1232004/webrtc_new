@@ -14,7 +14,7 @@
  * Based on the sse2 version.
  */
 
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "webrtc/modules/audio_processing/aec/aec_rdft.h"
 
 #include <arm_neon.h>
@@ -353,3 +353,4 @@ void aec_rdft_init_neon(void) {
   rftbsub_128 = rftbsub_128_neon;
 }
 
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

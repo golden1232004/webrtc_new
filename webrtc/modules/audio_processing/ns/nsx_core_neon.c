@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(ENABLE_OPTIMIZE_NEON)
 #include "webrtc/modules/audio_processing/ns/nsx_core.h"
 
 #include <arm_neon.h>
@@ -603,3 +603,4 @@ void WebRtcNsx_AnalysisUpdateNeon(NoiseSuppressionFixedC* inst,
   int16x4_t result_high = vrshrn_n_s32(tmp32_high, 14);
   vst1q_s16(p_start_out, vcombine_s16(result_low, result_high));
 }
+#endif //#if defined(ENABLE_OPTIMIZE_NEON)

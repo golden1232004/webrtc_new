@@ -7,7 +7,7 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-
+#if defined(UNIT_TEST)
 #include "testing/gtest/include/gtest/gtest.h"
 
 #include "webrtc/modules/audio_processing/utility/block_mean_calculator.h"
@@ -57,3 +57,4 @@ TEST(MeanCalculatorTest, Reset) {
 }
 
 }  // namespace webrtc
+#endif //UNIT_TEST
